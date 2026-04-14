@@ -1,0 +1,74 @@
+{
+    "direccion": [
+        {
+            "type": "FISICO",
+            "name": "purdue",
+            "files": [
+                {
+                    "type": "CALCULATOR",
+                    "name": "PUNTUACIÓN DEL PURDUE.xlsx"
+                },
+                {
+                    "type": "INFORMATIVE",
+                    "name": "INTERPRETACIÓN DEL PURDUE.pdf"
+                },
+                {
+                    "type": "EXAMEN",
+                    "name": "Purdue Forma B.pdf"
+                },
+                {
+                    "type": "TABULACION",
+                    "name": "Purdue Forma B.pdf"
+                }
+            ]
+        },
+        {
+            "type": "FISICO",
+            "name": "barsit",
+            "files": [
+                {
+                    "type": "CALCULATOR",
+                    "name": "Barsit.xlsx"
+                },
+                {
+                    "type": "EXAMEN",
+                    "name": "Test Habilidad Mental BARSIT (manual).pdf"
+                }
+            ]
+        },
+        {
+            "type": "FISICO",
+            "name": "disc",
+            "files": [
+                {
+                    "type": "CALCULATOR",
+                    "name": "Software.xls"
+                },
+                {
+                    "type": "INTEPRETACION",
+                    "name": "Perfil.pdf"
+                },
+                {
+                    "type": "INTEPRETACION",
+                    "name": "Test Disc Patrones.doc"
+                },
+                {
+                    "type": "INTEPRETACION",
+                    "name": "Test Disc Tablas de Conversion.doc"
+                },
+                {
+                    "type": "INTEPRETACION",
+                    "name": "Test Disc Tablas para la Interpretacion.xls"
+                },
+                {
+                    "type": "INTEPRETACION",
+                    "name": "Test Disc Transparencia para la Correccion Manual.xls"
+                },
+                {
+                    "type": "EXAMEN",
+                    "name": "Test Disc.xls"
+                }
+            ]
+        }
+    ]
+}

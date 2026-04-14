@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gestor de Tests</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+      padding: 30px;
+    }
+
+    .test-card {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    h2 {
+      text-transform: capitalize;
+      margin-bottom: 10px;
+    }
+
+    .file-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .file-row:last-child {
+      border-bottom: none;
+    }
+
+    .type {
+      font-size: 12px;
+      background: #e8eefc;
+      padding: 4px 8px;
+      border-radius: 6px;
+      margin-right: 10px;
+    }
+
+    button {
+      background: #2563eb;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #1d4ed8;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Tests disponibles</h1>
+
+  <div id="contenedor"></div>
+
+  <script>
+    const basePath = "./files/";
+
+    fetch("./files.json")
+      .then(response => response.json())
+      .then(data => {
+        const contenedor = document.getElementById("contenedor");
+
+        data.direccion.forEach(test => {
+          const card = document.createElement("div");
+          card.className = "test-card";
+
+          card.innerHTML = `
+            <h2>${test.name}</h2>
+            <p>Tipo: ${test.type}</p>
+          `;
+
+          test.files.forEach(file => {
+            const filePath = `${basePath}${test.name}/${file.name}`;
+
+            const row = document.createElement("div");
+            row.className = "file-row";
+
+            row.innerHTML = `
+              <div>
+                <span class="type">${file.type}</span>
+                ${file.name}
+              </div>
+              <button onclick="abrirArchivo('${filePath}')">Abrir</button>
+            `;
+
+            card.appendChild(row);
+          });
+
+          contenedor.appendChild(card);
+        });
+      })
+      .catch(error => {
+        console.error("Error leyendo files.json:", error);
+        document.getElementById("contenedor").innerHTML =
+          "<p>No se pudo cargar el archivo files.json.</p>";
+      });
+
+    function abrirArchivo(ruta) {
+      window.open(ruta, "_blank");
+    }
+  </script>
+
+</body>
+</html>
