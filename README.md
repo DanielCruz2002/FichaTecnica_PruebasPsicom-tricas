@@ -1,0 +1,1 @@
+# FichaTecnica_PruebasPsicom-tricas
