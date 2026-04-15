@@ -1,0 +1,579 @@
+{
+  "meta": {
+    "institucion": "Heroico y Benemérito Cuerpo de Bomberos de Honduras",
+    "siglas": "HBCBH",
+    "departamento": "Departamento de Psicosocial",
+    "titulo": "Fichas técnicas de pruebas psicométricas para selección de bomberos",
+    "elaborado_por": "Reyna Alicia Cruz Hernández",
+    "carrera": "Licenciatura en Psicología",
+    "lugar": "Tegucigalpa, M.D.C.",
+    "fecha": "Abril de 2026"
+  },
+  "tests": [
+    {
+      "id": "purdue",
+      "nombre": "Test No Verbal de la Universidad de Purdue",
+      "sigla": "PURDUE",
+      "emoji": "🔷",
+      "categoria": "Cognitivo",
+      "color": "#3b82f6",
+      "autores": "Joseph Tiffin, Alin Grubner y Kay Inaba. Adaptación al español por Wladimiro Woyno y Raúl E. Oñoro Amador.",
+      "objetivo": "Evaluar la inteligencia general mediante razonamiento no verbal, a partir de figuras geométricas, con menor dependencia del lenguaje y con posibilidad de aplicación en personas con diferentes niveles educativos y procedencias socioculturales.",
+      "poblacion": "Adolescentes y adultos",
+      "duracion": "~25 minutos",
+      "aplicacion": {
+        "modalidad": "Individual o colectiva",
+        "instrucciones": [
+          "El evaluador debe explicar claramente las instrucciones antes de iniciar.",
+          "El evaluado debe identificar la figura diferente dentro de cada serie.",
+          "Las respuestas se marcan con una X.",
+          "El tiempo debe ser controlado por el evaluador.",
+          "Se recomienda un ambiente adecuado, sin interrupciones."
+        ]
+      },
+      "materiales": [
+        "Cuadernillo de preguntas",
+        "Hoja de respuestas",
+        "Lápiz",
+        "Clave de corrección",
+        "Tablas de percentiles",
+        "Manual de instrucciones"
+      ],
+      "areas": [
+        { "nombre": "Percepción y organización visoespacial", "descripcion": "Evalúa la capacidad para observar figuras, reconocer sus partes y organizar visualmente la información en el espacio." },
+        { "nombre": "Razonamiento abstracto", "descripcion": "Mide la habilidad para identificar relaciones, patrones y reglas entre figuras, sin depender del lenguaje verbal." },
+        { "nombre": "Memoria asociativa", "descripcion": "Explora la capacidad para relacionar estímulos visuales entre sí y recordar correspondencias entre formas o configuraciones." },
+        { "nombre": "Razonamiento formal", "descripcion": "Valora la capacidad para seguir una lógica interna, identificar secuencias y resolver problemas con base en reglas." },
+        { "nombre": "Traslación", "descripcion": "Evalúa la habilidad para reconocer una figura cuando cambia de posición o se desplaza en el espacio sin alterar su estructura." },
+        { "nombre": "Rotación", "descripcion": "Mide la capacidad para identificar figuras que han sido giradas y reconocer que siguen siendo equivalentes." },
+        { "nombre": "Inducción", "descripcion": "Explora la habilidad para inferir una regla general a partir de ejemplos o series de figuras." },
+        { "nombre": "Deducción", "descripcion": "Evalúa la capacidad para aplicar una regla o principio dado y llegar a una conclusión correcta." },
+        { "nombre": "Capacidad de análisis de relaciones entre figuras", "descripcion": "Mide la habilidad para comparar formas, encontrar semejanzas y diferencias, y establecer relaciones visuales lógicas entre ellas." }
+      ],
+      "calificacion": "Se comparan las respuestas del evaluado con la plantilla de respuestas correctas, se contabilizan los aciertos y el puntaje se transforma en percentiles según las tablas del manual.",
+      "interpretacion": [
+        { "categoria": "Muy superior", "rango": "130 o más" },
+        { "categoria": "Superior", "rango": "120 – 129" },
+        { "categoria": "Normal brillante", "rango": "110 – 119" },
+        { "categoria": "Normal", "rango": "90 – 109" },
+        { "categoria": "Dull normal (torpe)", "rango": "80 – 89" },
+        { "categoria": "Borderline", "rango": "70 – 79" },
+        { "categoria": "Deficiencia mental", "rango": "69 o menos" }
+      ],
+      "validez": "Presenta adecuados niveles de validez para la evaluación de la inteligencia no verbal bajo condiciones estandarizadas.",
+      "uso_bomberos": [
+        "Evaluar capacidad de toma de decisiones",
+        "Medir rapidez mental en situaciones operativas",
+        "Identificar aspirantes con buen razonamiento bajo presión"
+      ],
+      "limitaciones": [
+        "No evalúa rasgos de personalidad",
+        "No mide habilidades emocionales ni sociales",
+        "Debe complementarse con otras pruebas psicométricas y entrevistas"
+      ],
+      "archivos": [
+        { "tipo": "CALCULATOR", "nombre": "PUNTUACIÓN DEL PURDUE.xlsx", "ruta": "files/purdue/PUNTUACIÓN DEL PURDUE.xlsx" },
+        { "tipo": "INFORMATIVE", "nombre": "INTERPRETACIÓN DEL PURDUE.pdf", "ruta": "files/purdue/INTERPRETACIÓN DEL PURDUE.pdf" },
+        { "tipo": "EXAMEN", "nombre": "Purdue Forma B.pdf", "ruta": "files/purdue/Purdue Forma B.pdf" },
+        { "tipo": "TABULACION", "nombre": "Purdue Forma B (Tabulación).pdf", "ruta": "files/purdue/Purdue Forma B.pdf" }
+      ]
+    },
+    {
+      "id": "gordon",
+      "nombre": "Perfil e Inventario de Personalidad Gordon (PPG-IPG)",
+      "sigla": "PPG-IPG",
+      "emoji": "🧭",
+      "categoria": "Personalidad",
+      "color": "#8b5cf6",
+      "autores": "Leonard V. Gordon. Adaptación en español publicada por El Manual Moderno, S. A., México, D. F., 1972.",
+      "objetivo": "Evaluar rasgos de personalidad relevantes para contextos educativos, organizacionales y de selección de personal, mediante la identificación de características asociadas con liderazgo, responsabilidad, estabilidad emocional, sociabilidad, cautela, originalidad, relaciones personales y vigor.",
+      "poblacion": "Adolescentes y adultos (nivel secundario, preparatoria y universitario)",
+      "duracion": "15–30 minutos (PPG: 7–15 min / IPG: 10–15 min)",
+      "aplicacion": {
+        "modalidad": "Individual o colectiva (autoadministrable)",
+        "instrucciones": [
+          "Es un instrumento autoadministrable, aunque se recomienda presencia del examinador.",
+          "El PPG y el IPG pueden administrarse por separado o en la misma sesión.",
+          "No exige cronometraje rígido, pero se debe evitar que el evaluado se detenga demasiado tiempo en cada reactivo."
+        ]
+      },
+      "materiales": [
+        "Cuadernillo de test",
+        "Hoja de respuestas",
+        "Lápiz o bolígrafo",
+        "Clave de corrección",
+        "Tablas de percentiles",
+        "Manual del evaluador"
+      ],
+      "areas": [
+        { "nombre": "Ascendencia (PPG)", "descripcion": "Evalúa liderazgo, iniciativa, seguridad y capacidad de influir en otros." },
+        { "nombre": "Responsabilidad (PPG)", "descripcion": "Refleja constancia, disciplina, perseverancia y sentido del deber." },
+        { "nombre": "Estabilidad emocional (PPG)", "descripcion": "Indica control emocional, serenidad y tolerancia a la tensión." },
+        { "nombre": "Sociabilidad (PPG)", "descripcion": "Refleja gusto por la interacción social, facilidad de trato y participación en actividades grupales." },
+        { "nombre": "Cautela (IPG)", "descripcion": "Sugiere prudencia, reflexión y tendencia a pensar antes de actuar." },
+        { "nombre": "Originalidad (IPG)", "descripcion": "Refleja pensamiento independiente, interés por ideas nuevas y gusto por problemas difíciles." },
+        { "nombre": "Relaciones personales (IPG)", "descripcion": "Indica tacto, paciencia, tolerancia, comprensión y buen manejo interpersonal." },
+        { "nombre": "Vigor / Energía (IPG)", "descripcion": "Refleja energía, dinamismo, rapidez y buen ritmo de trabajo." }
+      ],
+      "calificacion": "La respuesta 'más' vale 2 puntos, la no marcada vale 1 punto, y la marcada 'menos' vale 0 puntos. Puntuación máxima: PPG 36 pts / IPG 40 pts. Los puntajes directos se convierten a rangos percentiles.",
+      "interpretacion": [
+        { "escala": "Ascendencia", "alto": "Liderazgo, iniciativa, seguridad e influencia en otros.", "bajo": "Menor tendencia a dirigir o influir en los demás." },
+        { "escala": "Responsabilidad", "alto": "Constancia, disciplina, perseverancia y sentido del deber.", "bajo": "Menor organización, persistencia o compromiso con las tareas." },
+        { "escala": "Estabilidad emocional", "alto": "Control emocional, serenidad y tolerancia a la tensión.", "bajo": "Mayor sensibilidad, preocupación, ansiedad o inestabilidad emocional." },
+        { "escala": "Sociabilidad", "alto": "Gusto por interacción social, facilidad de trato, participación grupal.", "bajo": "Reserva, menor interés social o preferencia por situaciones menos interactivas." },
+        { "escala": "Cautela", "alto": "Prudencia, reflexión y tendencia a pensar antes de actuar.", "bajo": "Impulsividad o menor inclinación a considerar riesgos antes de decidir." },
+        { "escala": "Originalidad", "alto": "Pensamiento independiente, interés por ideas nuevas.", "bajo": "Preferencia por lo convencional o tareas ya estructuradas." },
+        { "escala": "Relaciones personales", "alto": "Tacto, paciencia, tolerancia y buen manejo interpersonal.", "bajo": "Crítica, irritabilidad, menor flexibilidad o dificultad en el trato." },
+        { "escala": "Vigor", "alto": "Energía, dinamismo, rapidez y buen ritmo de trabajo.", "bajo": "Menor empuje, menor productividad o ritmo de trabajo más lento." }
+      ],
+      "validez": "Coeficientes de confiabilidad entre 0.70 y 0.85, considerados adecuados en evaluación de personalidad.",
+      "uso_bomberos": [
+        "Liderazgo e iniciativa",
+        "Responsabilidad y disciplina",
+        "Estabilidad emocional bajo presión",
+        "Sociabilidad y relaciones interpersonales",
+        "Prudencia en la toma de decisiones",
+        "Energía y ritmo de trabajo"
+      ],
+      "limitaciones": [
+        "Puede verse afectada por respuestas socialmente deseables o por condiciones motivacionales del evaluado.",
+        "No debe utilizarse como único criterio de selección o diagnóstico.",
+        "Requiere interpretación con base en normas percentilares y en el contexto del evaluado.",
+        "Debe complementarse con entrevista, observación y otras pruebas psicológicas."
+      ],
+      "archivos": []
+    },
+    {
+      "id": "otis",
+      "nombre": "Test de Inteligencia General OTIS Sencillo",
+      "sigla": "OTIS",
+      "emoji": "🧠",
+      "categoria": "Cognitivo",
+      "color": "#06b6d4",
+      "autores": "Arthur S. Otis. Adaptación española por M. Yela y colaboradores. Edición revisada por TEA Ediciones.",
+      "objetivo": "Evaluar la inteligencia general mediante tareas de comprensión verbal, analogías, organización verbal, razonamiento lógico, series numéricas y razonamiento aritmético.",
+      "poblacion": "Escolares y adultos, con baremos diferenciados según edad, curso, sexo y grupo profesional.",
+      "duracion": "30 minutos",
+      "aplicacion": {
+        "modalidad": "Individual o colectiva",
+        "instrucciones": [
+          "Administrarse siguiendo instrucciones estandarizadas.",
+          "Tiempo controlado obligatorio.",
+          "Interpretación debe realizarse con el baremo correspondiente al grupo del evaluado."
+        ]
+      },
+      "materiales": [
+        "Manual",
+        "Cuadernillo del test",
+        "Hoja de respuestas",
+        "Lápiz",
+        "Borrador",
+        "Cronómetro o reloj",
+        "Clave o plantilla de corrección",
+        "Tablas de baremos"
+      ],
+      "areas": [
+        { "nombre": "Significado de palabras", "descripcion": "Evalúa comprensión léxica y vocabulario." },
+        { "nombre": "Analogías verbales", "descripcion": "Valora relaciones entre conceptos." },
+        { "nombre": "Oraciones desordenadas", "descripcion": "Explora organización y comprensión verbal." },
+        { "nombre": "Interpretación de proverbios", "descripcion": "Examina comprensión verbal y juicio." },
+        { "nombre": "Razonamiento lógico", "descripcion": "Valora relaciones lógicas y solución de problemas." },
+        { "nombre": "Series numéricas", "descripcion": "Explora razonamiento secuencial y numérico." },
+        { "nombre": "Razonamiento aritmético", "descripcion": "Evalúa solución de problemas cuantitativos sencillos." }
+      ],
+      "calificacion": "Se obtiene una puntuación directa del total de respuestas correctas. Puede transformarse en centiles, eneatipos, puntuaciones S o cociente intelectual según la tabla normativa utilizada.",
+      "interpretacion": [
+        { "ci": "Menos de 25", "nivel": "Inferior" },
+        { "ci": "26 a 75", "nivel": "Normal" },
+        { "ci": "76 a 90", "nivel": "Normal superior" },
+        { "ci": "91 a 100", "nivel": "Superior" },
+        { "ci": "101 a 128", "nivel": "Muy superior" }
+      ],
+      "validez": "Coeficiente de fiabilidad de 0.92 (procedimiento dos mitades, corregido con Spearman-Brown). Correlación múltiple de 0.71 entre el PMA y el Otis Sencillo.",
+      "uso_bomberos": [
+        "Capacidad general de razonamiento",
+        "Comprensión de instrucciones",
+        "Rapidez mental",
+        "Solución de problemas",
+        "Potencial de aprendizaje"
+      ],
+      "limitaciones": [
+        "Puede verse influido por el nivel educativo y la experiencia con este tipo de reactivos.",
+        "Debe interpretarse con el baremo adecuado al grupo evaluado.",
+        "No sustituye una evaluación psicológica integral."
+      ],
+      "archivos": []
+    },
+    {
+      "id": "minimult",
+      "nombre": "Inventario Multifásico de Personalidad de Minnesota – Mini-Mult",
+      "sigla": "MINI-MULT",
+      "emoji": "🧩",
+      "categoria": "Personalidad / Clínico",
+      "color": "#ef4444",
+      "autores": "Hathaway y McKinley (MMPI original). Versión abreviada: Kincannon (1968). Adaptaciones: Adis y Araya (1971).",
+      "objetivo": "Evaluar características relevantes de la personalidad y detectar posibles indicadores psicopatológicos mediante una versión abreviada del MMPI, que permite obtener puntajes de las áreas más importantes de la personalidad del sujeto.",
+      "poblacion": "Adolescentes y adultos",
+      "duracion": "20 a 45 minutos (sin límite estricto)",
+      "aplicacion": {
+        "modalidad": "Individual o colectiva",
+        "instrucciones": [
+          "Administrar en un ambiente adecuado.",
+          "No presionar innecesariamente al evaluado.",
+          "Considerar variables como edad, sexo, grado de instrucción y nivel sociocultural."
+        ]
+      },
+      "materiales": [
+        "Manual",
+        "Cuadernillo de ítems (71 reactivos)",
+        "Hoja de respuestas",
+        "Plantillas de corrección",
+        "Tablas de conversión (puntajes T)",
+        "Hoja de perfil gráfico"
+      ],
+      "areas": [
+        { "nombre": "Hs – Hipocondría", "tipo": "Clínica", "descripcion": "Preocupación por la salud y quejas físicas." },
+        { "nombre": "Dp – Depresión", "tipo": "Clínica", "descripcion": "Estado de ánimo bajo, pesimismo, sentimientos de culpa." },
+        { "nombre": "Hi – Histeria", "tipo": "Clínica", "descripcion": "Somatización, negación, reacciones dramáticas." },
+        { "nombre": "Pd – Desviación psicopática", "tipo": "Clínica", "descripcion": "Conducta antisocial, impulsividad, conflicto con normas." },
+        { "nombre": "Pa – Paranoia", "tipo": "Clínica", "descripcion": "Desconfianza, susceptibilidad, ideas persecutorias." },
+        { "nombre": "Pt – Psicastenia", "tipo": "Clínica", "descripcion": "Ansiedad, obsesiones, inseguridad, pensamiento rígido." },
+        { "nombre": "Es – Esquizofrenia", "tipo": "Clínica", "descripcion": "Pensamiento extraño, desorganización, aislamiento." },
+        { "nombre": "Ma – Hipomanía", "tipo": "Clínica", "descripcion": "Hiperactividad, impulsividad, variabilidad emocional." },
+        { "nombre": "? – Frases omitidas", "tipo": "Validez", "descripcion": "Registra los ítems que el evaluado deja sin responder." },
+        { "nombre": "L – Mentira", "tipo": "Validez", "descripcion": "Mide deseabilidad social y negación de fallas." },
+        { "nombre": "F – Infrecuencia", "tipo": "Validez", "descripcion": "Detecta respuestas atípicas o exageradas." },
+        { "nombre": "K – Corrección", "tipo": "Validez", "descripcion": "Actitud defensiva y ajuste aparente del perfil." }
+      ],
+      "calificacion": "Se suman respuestas según claves de corrección → puntajes directos por escala → corrección con K en algunas escalas clínicas → conversión a puntajes T → elaboración de perfil gráfico.",
+      "interpretacion": [
+        { "escala": "L (Mentira)", "niveles": [
+          { "rango": "≥80 (Muy alto)", "descripcion": "Probablemente inválido; el sujeto aparenta estar bien adaptado." },
+          { "rango": "70–79 (Alto)", "descripcion": "Validez cuestionable; niega defectos e imagen socialmente deseable." },
+          { "rango": "60–69 (Moderado)", "descripcion": "Probablemente válido; actitud defensiva o conformidad marcada." },
+          { "rango": "50–59 (Medio)", "descripcion": "Válido; actitud adecuada ante la prueba." },
+          { "rango": "≤49 (Bajo)", "descripcion": "Posible perfil elevado; poca defensividad o franqueza extrema." }
+        ]},
+        { "escala": "F (Infrecuencia)", "niveles": [
+          { "rango": "≥91 (Muy alto)", "descripcion": "Probablemente inválido; respuestas al azar o desorganización." },
+          { "rango": "71–90 (Alto)", "descripcion": "Validez cuestionable; respuestas poco comunes o alteración clínica." },
+          { "rango": "56–70 (Moderado)", "descripcion": "Probablemente válido; malestar emocional o conflicto interno." },
+          { "rango": "45–55 (Medio)", "descripcion": "Protocolo aceptable." },
+          { "rango": "≤44 (Bajo)", "descripcion": "Perfil aceptable; adaptación social o conformidad." }
+        ]},
+        { "escala": "K (Corrección)", "niveles": [
+          { "rango": "≥71 (Alto)", "descripcion": "Defensividad marcada; tendencia a ocultar problemas." },
+          { "rango": "56–70 (Moderado)", "descripcion": "Defensividad moderada, adaptación aparente." },
+          { "rango": "41–55 (Medio)", "descripcion": "Equilibrio adecuado entre autocrítica y autoprotección." },
+          { "rango": "≤40 (Bajo)", "descripcion": "Baja defensividad; crítica hacia sí mismo o escasos recursos de manejo." }
+        ]}
+      ],
+      "validez": "La versión Mini-Mult ha mostrado correlaciones significativas con las escalas homólogas del MMPI original. Al ser abreviada, puede sobreestimar o subestimar algunas escalas. Uso recomendado como tamizaje y apoyo clínico inicial.",
+      "uso_bomberos": [
+        "Aplicación rápida",
+        "Fácil administración",
+        "Apoyo para evaluación inicial de rasgos de personalidad",
+        "Detección preliminar de posibles indicadores clínicos relevantes"
+      ],
+      "limitaciones": [
+        "Menor profundidad diagnóstica que el MMPI completo al ser versión abreviada.",
+        "Puede presentar distorsión por respuestas defensivas o poco sinceras.",
+        "No sustituye una evaluación clínica integral.",
+        "Debe complementarse con entrevista, observación y otros instrumentos psicológicos."
+      ],
+      "archivos": []
+    },
+    {
+      "id": "disc",
+      "nombre": "Sistema de Perfil Personal (TTCD / DISC)",
+      "sigla": "DISC",
+      "emoji": "🎯",
+      "categoria": "Conductual",
+      "color": "#e63000",
+      "autores": "Basado en la teoría conductual de William M. Marston. Clasificación de conductas en cuatro grupos: D, I, S y C.",
+      "objetivo": "Identificar la forma de comportamiento del individuo en el trabajo, reconocer diferencias entre personas, favorecer el autoconocimiento y ayudar a mejorar la productividad, la armonía organizacional y la adaptación al ambiente.",
+      "poblacion": "Personas evaluadas en contextos de trabajo, orientación vocacional, selección de personal y conformación de equipos.",
+      "duracion": "25 a 30 minutos",
+      "aplicacion": {
+        "modalidad": "Manual (papel y lápiz) o sistematizada (Excel / plataforma digital)",
+        "instrucciones": [
+          "Se registran respuestas en opciones 'más' y 'menos'.",
+          "Con la columna MÁS se traza la Gráfica I.",
+          "Con la columna MENOS se traza la Gráfica II.",
+          "La Gráfica III = Gráfica I – Gráfica II.",
+          "Las gráficas se dividen en siete segmentos para identificar el patrón del perfil."
+        ]
+      },
+      "materiales": [
+        "Cuadernillo o formato impreso",
+        "Hoja de respuestas",
+        "Lápiz",
+        "Borrador",
+        "Formato de gráficas o perfil"
+      ],
+      "areas": [
+        { "nombre": "D – Dominante", "descripcion": "Personas decididas, rápidas y orientadas a resultados concretos." },
+        { "nombre": "I – Influyente", "descripcion": "Personas comunicativas, sociables, de buen humor y orientadas a las relaciones." },
+        { "nombre": "S – Estable", "descripcion": "Personas tranquilas, serviciales, solidarias y orientadas a la estabilidad." },
+        { "nombre": "C – Concienzudo", "descripcion": "Personas racionales, rigurosas, legalistas y centradas en la corrección de procedimientos." }
+      ],
+      "calificacion": "Se trazan tres gráficas: G-I (columna MÁS), G-II (columna MENOS), G-III (G-I – G-II). Se dividen en siete segmentos para identificar el patrón conductual predominante.",
+      "interpretacion": [
+        { "perfil": "Perfil Emocional (PE)", "descripcion": "Expresa la respuesta emocional espontánea del individuo." },
+        { "perfil": "Perfil Adaptativo (PA)", "descripcion": "Representa la conducta que la persona considera más adecuada para responder al ambiente." },
+        { "perfil": "Perfil Integral (PI)", "descripcion": "Resume la interacción entre la respuesta emocional y la adaptación al entorno." }
+      ],
+      "validez": "Instrumento descriptivo y organizacional. Si se reaplica en el tiempo, hay ~90% de probabilidad de que la tendencia más importante no cambie significativamente, salvo que el ambiente haya variado. No es prueba clínica ni diagnóstica.",
+      "uso_bomberos": [
+        "Trabajo en equipo",
+        "Estilo de interacción",
+        "Adaptación al ambiente laboral",
+        "Manejo de relaciones interpersonales",
+        "Potencial de desarrollo en funciones organizacionales y operativas"
+      ],
+      "limitaciones": [
+        "No debe interpretarse como prueba clínica ni diagnóstica.",
+        "Describe tendencias conductuales, no capacidades cognitivas.",
+        "Sus resultados dependen del contexto y del ambiente percibido por la persona.",
+        "Debe complementarse con entrevista y otros instrumentos si se utilizará en selección de personal."
+      ],
+      "archivos": [
+        { "tipo": "CALCULATOR", "nombre": "Software.xls", "ruta": "files/disc/Software.xls" },
+        { "tipo": "INTERPRETACION", "nombre": "Perfil.pdf", "ruta": "files/disc/Perfil.pdf" },
+        { "tipo": "INTERPRETACION", "nombre": "Test Disc Patrones.doc", "ruta": "files/disc/Test Disc Patrones.doc" },
+        { "tipo": "INTERPRETACION", "nombre": "Test Disc Tablas de Conversion.doc", "ruta": "files/disc/Test Disc Tablas de Conversion.doc" },
+        { "tipo": "INTERPRETACION", "nombre": "Test Disc Tablas para la Interpretacion.xls", "ruta": "files/disc/Test Disc Tablas para la Interpretacion.xls" },
+        { "tipo": "INTERPRETACION", "nombre": "Test Disc Transparencia para la Correccion Manual.xls", "ruta": "files/disc/Test Disc Transparencia para la Correccion Manual.xls" },
+        { "tipo": "EXAMEN", "nombre": "Test Disc.xls", "ruta": "files/disc/Test Disc.xls" }
+      ]
+    },
+    {
+      "id": "barsit",
+      "nombre": "Test de Habilidad Mental de Barsit",
+      "sigla": "BARSIT",
+      "emoji": "🧮",
+      "categoria": "Cognitivo",
+      "color": "#10b981",
+      "autores": "Dr. Francisco del Olmo. Edición consultada de El Manual Moderno.",
+      "objetivo": "Obtener rápidamente un índice de inteligencia o de aptitud para aprender, a partir de factores de inteligencia verbal, razonamiento numérico, elementos cognoscitivos lógico-verbales e información general.",
+      "poblacion": "Personas con nivel educativo de primaria y secundaria",
+      "duracion": "10 minutos",
+      "aplicacion": {
+        "modalidad": "Papel y lápiz o sistematizada (Excel o software de evaluación)",
+        "instrucciones": [
+          "Se comparan las respuestas con la clave oficial.",
+          "Cada respuesta correcta vale 1 punto.",
+          "Si falta respuesta, hay doble respuesta o la respuesta es errónea, se asigna 0 puntos.",
+          "En series numéricas, si solo uno de los números es correcto, también se asigna 0 puntos."
+        ]
+      },
+      "materiales": [
+        "Cuadernillo de test",
+        "Hoja de respuestas",
+        "Lápiz",
+        "Clave de corrección",
+        "Cronómetro",
+        "Formato de calificación manual o digital"
+      ],
+      "areas": [
+        { "nombre": "Conocimientos generales", "descripcion": "Evalúa la amplitud de información general del evaluado." },
+        { "nombre": "Comprensión de vocabulario", "descripcion": "Mide el entendimiento del significado de palabras." },
+        { "nombre": "Razonamiento lógico", "descripcion": "Evalúa la capacidad de inferir y resolver problemas con lógica." },
+        { "nombre": "Razonamiento numérico", "descripcion": "Mide la habilidad para resolver operaciones y series numéricas." },
+        { "nombre": "Razonamiento verbal", "descripcion": "Evalúa la comprensión y manejo del lenguaje." }
+      ],
+      "calificacion": "Cada respuesta correcta = 1 punto. Respuesta errónea, doble o en blanco = 0 puntos. En series numéricas, solo se da puntaje si ambos números son correctos.",
+      "interpretacion": [
+        { "nivel": "Muy inferior", "secundaria": "Hasta 26", "primaria": "Hasta 15" },
+        { "nivel": "Inferior", "secundaria": "27 a 33", "primaria": "16 a 23" },
+        { "nivel": "Mediano", "secundaria": "34 a 43", "primaria": "24 a 35" },
+        { "nivel": "Superior", "secundaria": "44 a 50", "primaria": "36 a 44" },
+        { "nivel": "Excelente", "secundaria": "Más de 50", "primaria": "Más de 44" }
+      ],
+      "validez": "Prueba breve utilizada para estimar la aptitud para aprender y la habilidad intelectual general en población con escolaridad básica. Se recomienda como instrumento de tamizaje o evaluación inicial.",
+      "uso_bomberos": [
+        "Tamizaje inicial de habilidad intelectual general",
+        "Comprensión rápida de instrucciones",
+        "Razonamiento verbal y numérico básico",
+        "Apoyo preliminar en procesos de selección o capacitación"
+      ],
+      "limitaciones": [
+        "Depende del nivel educativo del evaluado.",
+        "Está orientado a personas con escolaridad básica.",
+        "Debe usarse como instrumento breve o inicial, no como único criterio.",
+        "Su desempeño psicométrico en adultos ha sido cuestionado en investigación reciente."
+      ],
+      "archivos": [
+        { "tipo": "CALCULATOR", "nombre": "Barsit.xlsx", "ruta": "files/barsit/Barsit.xlsx" },
+        { "tipo": "EXAMEN", "nombre": "Test Habilidad Mental BARSIT (manual).pdf", "ruta": "files/barsit/Test Habilidad Mental BARSIT (manual).pdf" }
+      ]
+    },
+    {
+      "id": "mbti",
+      "nombre": "Indicador de Tipos de Personalidad (MBTI)",
+      "sigla": "MBTI",
+      "emoji": "🔮",
+      "categoria": "Personalidad",
+      "color": "#f59e0b",
+      "autores": "Katharine Cook Briggs e Isabel Briggs Myers. También referenciada Mary H. McCaulley.",
+      "objetivo": "Identificar las preferencias psicológicas del individuo en la forma de orientar su energía, percibir la información, tomar decisiones y relacionarse con el entorno.",
+      "poblacion": "Adolescentes mayores y adultos. Contextos educativos, organizacionales y de orientación personal.",
+      "duracion": "20 a 30 minutos",
+      "aplicacion": {
+        "modalidad": "Individual o colectiva (autoaplicable)",
+        "instrucciones": [
+          "El instrumento es autoaplicable.",
+          "En aplicaciones colectivas el examinador puede leer las instrucciones en voz alta.",
+          "No explicar el contenido de los ítems durante la aplicación."
+        ]
+      },
+      "materiales": [
+        "Cuestionario (formato digital o impreso)",
+        "Hoja de respuestas o sistema automatizado",
+        "Lápiz (si es manual)",
+        "Perfil o reporte de resultados"
+      ],
+      "areas": [
+        { "nombre": "E–I (Extroversión / Introversión)", "descripcion": "La forma preferida de dirigir la energía: hacia el mundo exterior de personas y actividades, o hacia el mundo interior de ideas y reflexión." },
+        { "nombre": "S–N (Sensación / Intuición)", "descripcion": "La manera preferida de percibir información: por hechos y detalles concretos, o por patrones, significados y posibilidades futuras." },
+        { "nombre": "T–F (Pensamiento / Sentimiento)", "descripcion": "La forma preferida de tomar decisiones: con lógica y análisis objetivo, o considerando valores personales e impacto en las personas." },
+        { "nombre": "J–P (Juicio / Percepción)", "descripcion": "La manera de organizar la vida: mediante estructura y planificación, o con flexibilidad, apertura y adaptación." }
+      ],
+      "calificacion": "Se usan cinco plantillas de corrección para obtener las ocho puntuaciones del MBTI. Las respuestas reciben 1 o 2 puntos. La escala T–F usa plantilla diferenciada por sexo. Se obtienen puntajes directos (PD), diferencias entre polos, preferencias (Pr) y finalmente el código de cuatro letras.",
+      "interpretacion": [
+        { "nivel": "N1 – Preferencia leve", "rango": "0 a 10", "descripcion": "La preferencia es poco marcada. Interpretar con cautela y contrastar con descripción que la persona reconoce como propia." },
+        { "nivel": "N2 – Preferencia moderada", "rango": "10 a 19", "descripcion": "La preferencia aparece definida, aunque no fuerte. Puede haber matices o divergencias en la conducta real." },
+        { "nivel": "N3 – Preferencia clara", "rango": "20 a 39 (F: 20 a 29)", "descripcion": "La preferencia está bien establecida. Probabilidad razonable de conductas congruentes con el tipo." },
+        { "nivel": "N4 – Preferencia muy clara", "rango": "≥40 (F: ≥30)", "descripcion": "La preferencia está fuertemente definida. Alta probabilidad de que el tipo represente adecuadamente la orientación de la persona." }
+      ],
+      "validez": "Instrumento de uso descriptivo y orientativo. Se presenta como indicador de preferencias psicológicas y herramienta de autoconocimiento. No es prueba clínica ni único criterio de evaluación.",
+      "uso_bomberos": [
+        "Explorar estilo de trabajo",
+        "Forma de interacción con el equipo",
+        "Adaptación al equipo de trabajo",
+        "Toma de decisiones",
+        "Modo de afrontar situaciones laborales"
+      ],
+      "limitaciones": [
+        "No mide inteligencia.",
+        "No evalúa trastornos psicológicos.",
+        "Puede verse influido por la autopercepción y el contexto del evaluado.",
+        "Es un instrumento de orientación, no de diagnóstico clínico."
+      ],
+      "archivos": []
+    },
+    {
+      "id": "bfq",
+      "nombre": "Cuestionario de Personalidad BFQ (Big Five Questionnaire)",
+      "sigla": "BFQ",
+      "emoji": "⭐",
+      "categoria": "Personalidad",
+      "color": "#ec4899",
+      "autores": "Gian Vittorio Caprara, Claudio Barbaranelli y Laura Borgogni (1993). Adaptación española por Bermúdez, UNED, TEA Ediciones, Madrid (1995).",
+      "objetivo": "Evaluar cinco dimensiones fundamentales de la personalidad, diez subdimensiones y una escala de distorsión, con el fin de describir el perfil de personalidad del evaluado.",
+      "poblacion": "Adolescentes y adultos con capacidad de lectura y comprensión básica.",
+      "duracion": "20 a 30 minutos",
+      "aplicacion": {
+        "modalidad": "Individual o colectiva",
+        "instrucciones": [
+          "Se suman por separado los puntos de ítems positivos y negativos.",
+          "Fórmula: PD = 36 + (puntos positivos – puntos negativos).",
+          "Se obtienen puntajes directos de subdimensiones, dimensiones y escala de distorsión.",
+          "Los resultados se transforman a baremos derivados (centiles o puntuaciones T)."
+        ]
+      },
+      "materiales": [
+        "Manual del test",
+        "Cuadernillo del BFQ",
+        "Hoja de respuestas",
+        "Hoja de perfil",
+        "Plantilla de corrección",
+        "Soporte informático para obtención de resultados"
+      ],
+      "areas": [
+        { "nombre": "Energía / Extraversión (E)", "subdimensiones": ["Dinamismo (Di)", "Dominancia (Do)"], "descripcion": "Evalúa el nivel de energía, sociabilidad e iniciativa." },
+        { "nombre": "Afabilidad (A)", "subdimensiones": ["Cooperación/Empatía (Cp)", "Cordialidad/Amabilidad (Co)"], "descripcion": "Evalúa la orientación hacia los demás, empatía y amabilidad." },
+        { "nombre": "Tesón / Responsabilidad (T)", "subdimensiones": ["Escrupulosidad (Es)", "Perseverancia (Pe)"], "descripcion": "Evalúa la constancia, autodisciplina y compromiso con las tareas." },
+        { "nombre": "Estabilidad emocional (EE)", "subdimensiones": ["Control de emociones (Ce)", "Control de impulsos (Ci)"], "descripcion": "Evalúa el manejo de emociones y reacciones impulsivas." },
+        { "nombre": "Apertura mental (AM)", "subdimensiones": ["Apertura a la cultura (Ac)", "Apertura a la experiencia (Ae)"], "descripcion": "Evalúa la disposición a nuevas ideas, experiencias y cultura." },
+        { "nombre": "Distorsión (D)", "subdimensiones": [], "descripcion": "Indicador del estilo de respuesta del evaluado; no se interpreta como rasgo de personalidad." }
+      ],
+      "calificacion": "Fórmula PD = 36 + (positivos – negativos). Los puntajes directos se convierten a puntuaciones T (media=50, DE=10) mediante tablas normativas.",
+      "interpretacion": [
+        { "nivel": "Muy bajo", "rango_T": "25–34", "descripcion": "Presencia muy baja del rasgo evaluado." },
+        { "nivel": "Bajo", "rango_T": "36–44", "descripcion": "Baja presencia del rasgo; tendencia por debajo del promedio." },
+        { "nivel": "Promedio", "rango_T": "46–54", "descripcion": "Presencia media o esperada del rasgo." },
+        { "nivel": "Alto", "rango_T": "56–64", "descripcion": "Presencia alta del rasgo; tendencia marcada en esa dimensión." },
+        { "nivel": "Muy alto", "rango_T": "66–75", "descripcion": "Presencia muy alta del rasgo; característica fuertemente acentuada." }
+      ],
+      "validez": "Evidencia de validez interna y estructura factorial coherente con el modelo de los Cinco Grandes. En la adaptación española se confirmaron cinco factores subyacentes a las diez subdimensiones.",
+      "uso_bomberos": [
+        "Estabilidad emocional bajo presión",
+        "Responsabilidad y disciplina",
+        "Trabajo en equipo y cooperación",
+        "Nivel de energía e iniciativa",
+        "Apertura al aprendizaje y adaptación"
+      ],
+      "limitaciones": [
+        "Dependencia del autoinforme del evaluado.",
+        "Influencia de la deseabilidad social.",
+        "No sustituye evaluación clínica profunda.",
+        "Debe interpretarse junto con otros datos del proceso de evaluación."
+      ],
+      "archivos": []
+    },
+    {
+      "id": "wpt",
+      "nombre": "Wonderlic Personnel Test (WPT)",
+      "sigla": "WPT",
+      "emoji": "⚡",
+      "categoria": "Cognitivo",
+      "color": "#f97316",
+      "autores": "Eldon F. Wonderlic",
+      "objetivo": "Evaluar la capacidad cognitiva general del evaluado, especialmente su habilidad para aprender, comprender instrucciones, resolver problemas y adaptarse a exigencias laborales.",
+      "poblacion": "Adolescentes mayores y adultos.",
+      "duracion": "12 minutos efectivos (cronometrado obligatorio). ~20 minutos incluyendo instrucciones.",
+      "aplicacion": {
+        "modalidad": "Individual o colectiva",
+        "instrucciones": [
+          "Tiempo cronometrado obligatorio: 12 minutos exactos.",
+          "Fórmula de calificación: Última pregunta contestada – (incorrectas + omitidas)."
+        ]
+      },
+      "materiales": [
+        "Cuadernillo del test",
+        "Hoja de respuestas",
+        "Lápiz",
+        "Cronómetro",
+        "Clave de corrección"
+      ],
+      "areas": [
+        { "nombre": "Comprensión verbal", "descripcion": "Comprensión del lenguaje y significado de palabras." },
+        { "nombre": "Razonamiento numérico", "descripcion": "Resolución de operaciones y relaciones numéricas." },
+        { "nombre": "Razonamiento lógico", "descripcion": "Inferencias, secuencias y solución de problemas." },
+        { "nombre": "Identificación de patrones", "descripcion": "Reconocimiento de relaciones, regularidades y organización mental." },
+        { "nombre": "Habilidad cognitiva general", "descripcion": "Integración rápida de información para responder bajo tiempo limitado." }
+      ],
+      "calificacion": "Fórmula: Calificación = Última pregunta contestada – (incorrectas + omitidas).",
+      "interpretacion": [
+        { "puntaje": "Alto", "descripcion": "Mayor facilidad para aprender, comprender instrucciones y resolver problemas con rapidez." },
+        { "puntaje": "Medio", "descripcion": "Desempeño cognitivo funcional esperado para tareas de complejidad moderada." },
+        { "puntaje": "Bajo", "descripcion": "Puede requerir más tiempo, supervisión o entrenamiento para aprender y ejecutar tareas." }
+      ],
+      "validez": "Evidencia de validez de constructo como medida breve de habilidad cognitiva general y validez predictiva en selección. Correlaciones moderadas a altas con pruebas como WAIS-R.",
+      "uso_bomberos": [
+        "Rapidez mental",
+        "Comprensión de instrucciones",
+        "Capacidad de aprendizaje",
+        "Resolución de problemas bajo presión",
+        "Adaptación a tareas operativas"
+      ],
+      "limitaciones": [
+        "Influido por el nivel educativo y familiaridad con pruebas escritas.",
+        "El tiempo limitado puede afectar el desempeño de algunos evaluados.",
+        "No sustituye una evaluación psicológica o neuropsicológica más amplia."
+      ],
+      "archivos": []
+    }
+  ]
+}

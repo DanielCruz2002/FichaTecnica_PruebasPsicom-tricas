@@ -1,115 +1,378 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <title>Gestor de Tests</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f6f8;
-      padding: 30px;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fichas Técnicas Psicométricas · HBCBH</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0b0d12;--surface:#111318;--surface2:#181b23;
+  --border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.12);
+  --text:#e8eaf0;--muted:#6b7280;--muted2:#9ca3af;
+  --fire:#e8460a;--fire2:#ff6b35;--gold:#f59e0b;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-weight:400;line-height:1.6;min-height:100vh;
+  background-image:radial-gradient(ellipse 80% 40% at 10% -10%,rgba(232,70,10,.10) 0%,transparent 60%),radial-gradient(ellipse 60% 40% at 90% 110%,rgba(232,70,10,.07) 0%,transparent 55%);}
+::-webkit-scrollbar{width:5px;height:5px}::-webkit-scrollbar-track{background:transparent}::-webkit-scrollbar-thumb{background:rgba(232,70,10,.35);border-radius:99px}
 
-    .test-card {
-      background: white;
-      border-radius: 10px;
-      padding: 20px;
-      margin-bottom: 20px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    }
+/* HEADER */
+.header{position:sticky;top:0;z-index:50;background:rgba(11,13,18,.88);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:14px 24px}
+.header-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.logo{display:flex;align-items:center;gap:12px;flex-shrink:0}
+.logo-badge{width:44px;height:44px;background:linear-gradient(135deg,#e8460a,#ff6b35);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;box-shadow:0 4px 20px rgba(232,70,10,.45);flex-shrink:0}
+.logo-title{font-family:'DM Serif Display',serif;font-size:1.05rem;color:#fff;line-height:1.1;display:block}
+.logo-sub{font-size:.68rem;color:var(--muted);letter-spacing:.05em;display:block}
+.header-right{margin-left:auto;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.search-wrap{position:relative}
+.search-wrap svg{position:absolute;left:11px;top:50%;transform:translateY(-50%);color:var(--muted);pointer-events:none}
+#search{background:var(--surface2);border:1px solid var(--border);border-radius:10px;color:var(--text);font-family:inherit;font-size:.85rem;padding:8px 14px 8px 36px;width:220px;outline:none;transition:border-color .2s,width .3s}
+#search:focus{border-color:rgba(232,70,10,.5);width:260px}
+#search::placeholder{color:var(--muted)}
+.filter-btns{display:flex;gap:6px;flex-wrap:wrap}
+.filter-btn{font-family:inherit;font-size:.72rem;font-weight:500;padding:5px 12px;border-radius:999px;border:1px solid var(--border);background:transparent;color:var(--muted2);cursor:pointer;transition:all .2s;white-space:nowrap}
+.filter-btn:hover{border-color:var(--border2);color:var(--text)}
+.filter-btn.active{background:var(--fire);border-color:var(--fire);color:#fff}
 
-    h2 {
-      text-transform: capitalize;
-      margin-bottom: 10px;
-    }
+/* MAIN */
+main{max-width:1100px;margin:0 auto;padding:32px 20px 60px}
+.stats-bar{display:flex;gap:24px;margin-bottom:28px;padding:16px 20px;background:var(--surface);border:1px solid var(--border);border-radius:14px;flex-wrap:wrap}
+.stat{display:flex;flex-direction:column;gap:2px}
+.stat-val{font-family:'DM Serif Display',serif;font-size:1.5rem;color:#fff}
+.stat-lbl{font-size:.7rem;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
 
-    .file-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px;
-      border-bottom: 1px solid #ddd;
-    }
+/* GRID */
+#grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:16px}
 
-    .file-row:last-child {
-      border-bottom: none;
-    }
+/* CARD */
+.card{background:var(--surface);border:1px solid var(--border);border-radius:16px;overflow:hidden;cursor:pointer;transition:transform .25s,border-color .25s,box-shadow .25s;display:flex;flex-direction:column;animation:fadeIn .4s ease both}
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.card:hover{transform:translateY(-4px);border-color:rgba(232,70,10,.3);box-shadow:0 16px 40px rgba(0,0,0,.4),0 0 0 1px rgba(232,70,10,.12)}
+.card-stripe{height:3px}
+.card-body{padding:20px;flex:1;display:flex;flex-direction:column;gap:12px}
+.card-top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
+.card-emoji{font-size:2rem;line-height:1}
+.card-duration{font-size:.68rem;font-weight:600;background:rgba(245,158,11,.12);border:1px solid rgba(245,158,11,.22);color:var(--gold);padding:3px 9px;border-radius:999px;white-space:nowrap;flex-shrink:0}
+.card-sigla{font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:2px}
+.card-name{font-family:'DM Serif Display',serif;font-size:1rem;color:#fff;line-height:1.2}
+.card-obj{font-size:.8rem;color:var(--muted2);line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-tags{display:flex;flex-wrap:wrap;gap:5px}
+.tag{font-size:.62rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;padding:2px 8px;border-radius:999px}
+.tag-cognitivo{background:rgba(59,130,246,.14);color:#60a5fa}
+.tag-personalidad{background:rgba(139,92,246,.14);color:#a78bfa}
+.tag-conductual{background:rgba(232,70,10,.14);color:#fb7040}
+.tag-clinico{background:rgba(239,68,68,.14);color:#f87171}
+.tag-fc{background:rgba(245,158,11,.12);color:#fbbf24}
+.tag-fi{background:rgba(59,130,246,.12);color:#93c5fd}
+.tag-fe{background:rgba(16,185,129,.12);color:#6ee7b7}
+.tag-ft{background:rgba(139,92,246,.12);color:#c4b5fd}
+.tag-fp{background:rgba(236,72,153,.12);color:#f9a8d4}
+.card-footer{padding:12px 20px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.card-pop{font-size:.72rem;color:var(--muted)}
+.card-cta{font-size:.75rem;font-weight:600;color:var(--fire2);display:flex;align-items:center;gap:6px}
+.files-count{background:rgba(232,70,10,.14);color:var(--fire2);border-radius:999px;padding:1px 7px;font-size:.65rem;font-weight:700}
+.no-files-badge{background:rgba(107,114,128,.12);color:var(--muted);border-radius:999px;padding:1px 7px;font-size:.65rem}
+#no-results{display:none;text-align:center;color:var(--muted);padding:60px 20px;font-size:.9rem}
 
-    .type {
-      font-size: 12px;
-      background: #e8eefc;
-      padding: 4px 8px;
-      border-radius: 6px;
-      margin-right: 10px;
-    }
+/* MODAL BACKDROP */
+.modal-bg{display:none;position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.78);backdrop-filter:blur(8px);align-items:flex-start;justify-content:center;padding:24px 16px;overflow-y:auto}
+.modal-bg.open{display:flex}
 
-    button {
-      background: #2563eb;
-      color: white;
-      border: none;
-      padding: 8px 12px;
-      border-radius: 6px;
-      cursor: pointer;
-    }
+/* MODAL BOX */
+.modal{background:var(--surface);border:1px solid var(--border2);border-radius:20px;width:100%;max-width:760px;margin:auto;overflow:hidden;animation:modalIn .3s cubic-bezier(.34,1.56,.64,1)}
+@keyframes modalIn{from{opacity:0;transform:scale(.94) translateY(20px)}to{opacity:1;transform:scale(1) translateY(0)}}
 
-    button:hover {
-      background: #1d4ed8;
-    }
-  </style>
+/* Modal Header */
+.m-header{padding:24px 24px 0;position:relative}
+.m-stripe{height:4px;border-radius:4px;margin-bottom:20px}
+.m-close{position:absolute;top:16px;right:16px;background:var(--surface2);border:1px solid var(--border);color:var(--muted);font-size:1.1rem;width:32px;height:32px;border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.m-close:hover{border-color:var(--border2);color:var(--text)}
+.m-top{display:flex;align-items:flex-start;gap:14px;margin-bottom:16px;padding-right:44px}
+.m-emoji{font-size:2.8rem;line-height:1;flex-shrink:0}
+.m-sigla{font-size:.65rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:3px}
+.m-name{font-family:'DM Serif Display',serif;font-size:1.35rem;color:#fff;line-height:1.15}
+.m-badges{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.m-badge{font-size:.66rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;padding:3px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.1);color:var(--muted2);background:var(--surface2)}
+.m-badge.fire{background:rgba(232,70,10,.14);border-color:rgba(232,70,10,.3);color:var(--fire2)}
+
+/* Tabs */
+.m-tabs{display:flex;gap:0;border-bottom:1px solid var(--border);padding:0 24px;overflow-x:auto}
+.m-tab{font-family:inherit;font-size:.79rem;font-weight:500;padding:11px 15px;background:transparent;border:none;color:var(--muted);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px;transition:all .2s;white-space:nowrap}
+.m-tab:hover{color:var(--text)}
+.m-tab.active{color:var(--fire2);border-bottom-color:var(--fire2)}
+
+/* Modal Body */
+.m-body{padding:24px;max-height:58vh;overflow-y:auto}
+.m-panel{display:none}
+.m-panel.active{display:block}
+
+/* Section pieces */
+.sec-label{font-size:.63rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--fire);margin-bottom:8px}
+.sec-block{margin-bottom:22px}
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px}
+.info-cell{background:var(--surface2);border:1px solid var(--border);border-radius:12px;padding:12px 14px}
+.info-cell-label{font-size:.63rem;color:var(--muted);letter-spacing:.07em;text-transform:uppercase;margin-bottom:4px}
+.info-cell-val{font-size:.85rem;color:var(--text)}
+.autores-box{background:var(--surface2);border:1px solid var(--border);border-radius:12px;padding:12px 14px;font-size:.82rem;color:var(--muted2);font-style:italic;margin-bottom:20px}
+.obj-text{font-size:.88rem;color:var(--muted2);line-height:1.65;border-left:3px solid var(--fire);padding-left:14px;margin-bottom:20px}
+.areas-list{display:flex;flex-direction:column;gap:8px}
+.area-row{background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:10px 14px;transition:border-color .2s}
+.area-row:hover{border-color:rgba(232,70,10,.2)}
+.area-name{font-size:.82rem;font-weight:600;color:var(--text);margin-bottom:2px;display:flex;align-items:center;gap:6px}
+.area-dot{width:6px;height:6px;border-radius:50%;background:var(--fire);flex-shrink:0;display:inline-block}
+.area-tipo{font-size:.6rem;font-weight:400;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.area-sub{font-size:.72rem;color:var(--muted2)}
+.area-subdims{display:flex;flex-wrap:wrap;gap:4px;margin-top:5px}
+.area-subdim{font-size:.62rem;color:var(--muted);background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:999px;padding:1px 7px}
+.mats-grid{display:flex;flex-wrap:wrap;gap:6px}
+.mat-item{font-size:.75rem;color:var(--muted2);background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:4px 10px}
+.cal-text{font-size:.84rem;color:var(--muted2);line-height:1.6;background:var(--surface2);border:1px solid var(--border);border-radius:12px;padding:14px}
+.interp-table{width:100%;border-collapse:separate;border-spacing:0 5px}
+.interp-table th{font-size:.63rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding:6px 10px;text-align:left}
+.interp-table td{font-size:.8rem;padding:8px 10px;background:var(--surface2);color:var(--muted2)}
+.interp-table td:first-child{border-radius:8px 0 0 8px;color:var(--text);font-weight:500}
+.interp-table td:last-child{border-radius:0 8px 8px 0}
+.uso-list,.lim-list{display:flex;flex-direction:column;gap:6px}
+.uso-item{font-size:.82rem;color:var(--muted2);display:flex;align-items:flex-start;gap:8px;background:rgba(232,70,10,.05);border:1px solid rgba(232,70,10,.1);border-radius:9px;padding:8px 12px}
+.uso-item::before{content:'🔥';font-size:.8rem;flex-shrink:0}
+.lim-item{font-size:.82rem;color:var(--muted2);display:flex;align-items:flex-start;gap:8px;background:rgba(239,68,68,.04);border:1px solid rgba(239,68,68,.1);border-radius:9px;padding:8px 12px}
+.lim-item::before{content:'⚠️';font-size:.8rem;flex-shrink:0}
+.validez-box{background:rgba(16,185,129,.05);border:1px solid rgba(16,185,129,.15);border-radius:12px;padding:14px;font-size:.84rem;color:var(--muted2);line-height:1.6}
+.aplic-item{font-size:.82rem;color:var(--muted2);display:flex;align-items:flex-start;gap:8px;padding:7px 0;border-bottom:1px solid var(--border)}
+.aplic-item:last-child{border-bottom:none}
+.aplic-arrow{color:var(--fire2);flex-shrink:0;margin-top:1px}
+.files-empty{text-align:center;padding:40px 20px;color:var(--muted);font-size:.85rem}
+.files-empty span{font-size:2rem;display:block;margin-bottom:8px}
+.files-list{display:flex;flex-direction:column;gap:8px}
+.file-row{display:flex;align-items:center;gap:12px;background:var(--surface2);border:1px solid var(--border);border-radius:12px;padding:12px 16px;text-decoration:none;transition:all .2s}
+.file-row:hover{border-color:rgba(232,70,10,.3);background:rgba(232,70,10,.05);transform:translateX(3px)}
+.file-ext{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+.file-info{flex:1;min-width:0}
+.file-name{font-size:.84rem;font-weight:500;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.file-path{font-size:.68rem;color:var(--muted);margin-top:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.file-open{color:var(--muted);font-size:1rem;transition:color .2s;flex-shrink:0}
+.file-row:hover .file-open{color:var(--fire2)}
+
+@media(max-width:600px){
+  #search{width:100%}#search:focus{width:100%}
+  .info-grid{grid-template-columns:1fr}.m-name{font-size:1.1rem}
+}
+</style>
 </head>
 <body>
 
-  <h1>Tests disponibles</h1>
+<header class="header">
+  <div class="header-inner">
+    <div class="logo">
+      <div class="logo-badge">🔥</div>
+      <div>
+        <span class="logo-title">HBCBH · Fichas Psicométricas</span>
+        <span class="logo-sub">Depto. Psicosocial · Selección de Bomberos · Elaborado: Abril 2026</span>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="search-wrap">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input id="search" type="text" placeholder="Buscar test, área, autor…" oninput="applyFilters()">
+      </div>
+      <div class="filter-btns" id="filter-btns">
+        <button class="filter-btn active" data-cat="all">Todos</button>
+        <button class="filter-btn" data-cat="Cognitivo">Cognitivo</button>
+        <button class="filter-btn" data-cat="Personalidad">Personalidad</button>
+        <button class="filter-btn" data-cat="Conductual">Conductual</button>
+        <button class="filter-btn" data-cat="Personalidad / Clínico">Clínico</button>
+        <button class="filter-btn" data-cat="con-archivos">📁 Con archivos</button>
+      </div>
+    </div>
+  </div>
+</header>
 
-  <div id="contenedor"></div>
+<main>
+  <div class="stats-bar" id="stats-bar"></div>
+  <div id="grid"></div>
+  <div id="no-results"><p style="font-size:2rem;margin-bottom:10px">🔍</p>No se encontraron tests para esta búsqueda.</div>
+</main>
 
-  <script>
-    const basePath = "./files/";
+<div class="modal-bg" id="modal-bg" onclick="bgClose(event)">
+  <div class="modal" id="modal-box"></div>
+</div>
 
-    fetch("./files.json")
-      .then(response => response.json())
-      .then(data => {
-        const contenedor = document.getElementById("contenedor");
+<script>
+let TESTS=[], activeFilter='all', currentTest=null, currentTab='general';
 
-        data.direccion.forEach(test => {
-          const card = document.createElement("div");
-          card.className = "test-card";
+const FILE_TYPES={
+  CALCULATOR:{cls:'tag-fc',label:'Calculadora',icon:'📊'},
+  INFORMATIVE:{cls:'tag-fi',label:'Informativo',icon:'📖'},
+  EXAMEN:{cls:'tag-fe',label:'Examen',icon:'📝'},
+  TABULACION:{cls:'tag-ft',label:'Tabulación',icon:'📋'},
+  INTERPRETACION:{cls:'tag-fp',label:'Interpretación',icon:'🔎'}
+};
+const CAT_CLS={'Cognitivo':'tag-cognitivo','Personalidad':'tag-personalidad','Conductual':'tag-conductual','Personalidad / Clínico':'tag-clinico'};
 
-          card.innerHTML = `
-            <h2>${test.name}</h2>
-            <p>Tipo: ${test.type}</p>
-          `;
+function ftag(tipo){const d=FILE_TYPES[tipo]||{cls:'tag-fi',label:tipo,icon:'📄'};return`<span class="tag ${d.cls}">${d.icon} ${d.label}</span>`}
+function ctag(cat){return`<span class="tag ${CAT_CLS[cat]||'tag-cognitivo'}">${cat}</span>`}
+function extOf(name){const e=(name||'').split('.').pop().toLowerCase();if(e==='xlsx'||e==='xls')return{i:'📗',bg:'rgba(16,185,129,.15)'};if(e==='pdf')return{i:'📕',bg:'rgba(239,68,68,.15)'};if(e==='doc'||e==='docx')return{i:'📘',bg:'rgba(59,130,246,.15)'};return{i:'📄',bg:'rgba(107,114,128,.15)'}}
 
-          test.files.forEach(file => {
-            const filePath = `${basePath}${test.name}/${file.name}`;
+async function loadData(){
+  try{const r=await fetch('tests.json');const d=await r.json();TESTS=d.tests;}
+  catch(e){TESTS=[];}
+  renderStats();renderGrid(TESTS);
+}
 
-            const row = document.createElement("div");
-            row.className = "file-row";
+function renderStats(){
+  const nf=TESTS.filter(t=>(t.archivos||[]).length>0).length;
+  const na=TESTS.reduce((a,t)=>a+(t.archivos||[]).length,0);
+  const nc=[...new Set(TESTS.map(t=>t.categoria))].length;
+  document.getElementById('stats-bar').innerHTML=`
+    <div class="stat"><span class="stat-val">${TESTS.length}</span><span class="stat-lbl">Tests totales</span></div>
+    <div class="stat"><span class="stat-val">${nc}</span><span class="stat-lbl">Categorías</span></div>
+    <div class="stat"><span class="stat-val">${nf}</span><span class="stat-lbl">Con documentos</span></div>
+    <div class="stat"><span class="stat-val">${na}</span><span class="stat-lbl">Archivos disponibles</span></div>`;
+}
 
-            row.innerHTML = `
-              <div>
-                <span class="type">${file.type}</span>
-                ${file.name}
-              </div>
-              <button onclick="abrirArchivo('${filePath}')">Abrir</button>
-            `;
+function renderGrid(tests){
+  const g=document.getElementById('grid'),nr=document.getElementById('no-results');
+  g.innerHTML='';
+  if(!tests.length){nr.style.display='block';return;}
+  nr.style.display='none';
+  tests.forEach((t,i)=>{
+    const ft=[...new Set((t.archivos||[]).map(f=>f.tipo))];
+    const nf=(t.archivos||[]).length;
+    const c=document.createElement('div');
+    c.className='card';c.style.animationDelay=(i*.05)+'s';
+    c.innerHTML=`
+      <div class="card-stripe" style="background:linear-gradient(90deg,${t.color||'#e8460a'},transparent)"></div>
+      <div class="card-body">
+        <div class="card-top"><span class="card-emoji">${t.emoji||'📋'}</span><span class="card-duration">⏱ ${t.duracion}</span></div>
+        <div><div class="card-sigla">${t.sigla}</div><div class="card-name">${t.nombre}</div></div>
+        <p class="card-obj">${t.objetivo}</p>
+        <div class="card-tags">${ctag(t.categoria)}${ft.map(tp=>ftag(tp)).join('')}</div>
+      </div>
+      <div class="card-footer">
+        <span class="card-pop">👥 ${(t.poblacion||'').split(',')[0]||'–'}</span>
+        <span class="card-cta">
+          ${nf>0?`<span class="files-count">${nf} archivo${nf!==1?'s':''}</span>`:`<span class="no-files-badge">Sin archivos</span>`}
+          Ver ficha →
+        </span>
+      </div>`;
+    c.onclick=()=>openModal(t);
+    g.appendChild(c);
+  });
+}
 
-            card.appendChild(row);
-          });
+document.getElementById('filter-btns').addEventListener('click',e=>{
+  const btn=e.target.closest('.filter-btn');if(!btn)return;
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');activeFilter=btn.dataset.cat;applyFilters();
+});
+function applyFilters(){
+  const q=document.getElementById('search').value.toLowerCase().trim();
+  let res=TESTS;
+  if(activeFilter==='con-archivos')res=res.filter(t=>(t.archivos||[]).length>0);
+  else if(activeFilter!=='all')res=res.filter(t=>t.categoria===activeFilter);
+  if(q)res=res.filter(t=>
+    t.nombre.toLowerCase().includes(q)||t.sigla.toLowerCase().includes(q)||
+    t.objetivo.toLowerCase().includes(q)||t.autores.toLowerCase().includes(q)||
+    (t.areas||[]).some(a=>(a.nombre||'').toLowerCase().includes(q))||
+    (t.uso_bomberos||[]).some(u=>u.toLowerCase().includes(q))||
+    (t.archivos||[]).some(f=>f.nombre.toLowerCase().includes(q))
+  );
+  renderGrid(res);
+}
 
-          contenedor.appendChild(card);
-        });
-      })
-      .catch(error => {
-        console.error("Error leyendo files.json:", error);
-        document.getElementById("contenedor").innerHTML =
-          "<p>No se pudo cargar el archivo files.json.</p>";
-      });
+function openModal(t){currentTest=t;currentTab='general';renderModal(t);document.getElementById('modal-bg').classList.add('open');document.body.style.overflow='hidden'}
+function closeModal(){document.getElementById('modal-bg').classList.remove('open');document.body.style.overflow=''}
+function bgClose(e){if(e.target===document.getElementById('modal-bg'))closeModal()}
+function switchTab(tab){currentTab=tab;renderModal(currentTest)}
 
-    function abrirArchivo(ruta) {
-      window.open(ruta, "_blank");
-    }
-  </script>
+function buildInterp(interp){
+  if(!interp||!interp.length)return'<p style="color:var(--muted);font-size:.85rem">Sin tabla de interpretación detallada.</p>';
+  const f=interp[0];
+  const tbl=(heads,rows)=>`<table class="interp-table"><thead><tr>${heads.map(h=>`<th>${h}</th>`).join('')}</tr></thead><tbody>${rows}</tbody></table>`;
+  if(f.categoria&&f.rango)return tbl(['Categoría','Rango'],interp.map(r=>`<tr><td>${r.categoria}</td><td>${r.rango}</td></tr>`).join(''));
+  if(f.ci)return tbl(['CI Estimado','Nivel'],interp.map(r=>`<tr><td>${r.ci}</td><td>${r.nivel}</td></tr>`).join(''));
+  if(f.secundaria)return tbl(['Nivel','Secundaria','Primaria'],interp.map(r=>`<tr><td>${r.nivel}</td><td>${r.secundaria}</td><td>${r.primaria}</td></tr>`).join(''));
+  if(f.alto)return tbl(['Escala','Puntaje alto','Puntaje bajo'],interp.map(r=>`<tr><td>${r.escala}</td><td>${r.alto}</td><td>${r.bajo}</td></tr>`).join(''));
+  if(f.rango_T)return tbl(['Nivel','Rango T','Descripción'],interp.map(r=>`<tr><td>${r.nivel}</td><td>${r.rango_T}</td><td>${r.descripcion}</td></tr>`).join(''));
+  if(f.nivel&&f.rango&&f.descripcion)return tbl(['Nivel','Rango','Descripción'],interp.map(r=>`<tr><td>${r.nivel}</td><td>${r.rango}</td><td>${r.descripcion}</td></tr>`).join(''));
+  if(f.puntaje)return tbl(['Puntaje','Interpretación'],interp.map(r=>`<tr><td>${r.puntaje}</td><td>${r.descripcion}</td></tr>`).join(''));
+  if(f.perfil)return tbl(['Perfil','Descripción'],interp.map(r=>`<tr><td>${r.perfil}</td><td>${r.descripcion}</td></tr>`).join(''));
+  if(f.escala&&f.niveles)return interp.map(sc=>`<div class="sec-block"><div class="sec-label">${sc.escala}</div>${tbl(['Rango T','Descripción'],sc.niveles.map(n=>`<tr><td>${n.rango}</td><td>${n.descripcion}</td></tr>`).join(''))}</div>`).join('');
+  return'<p style="color:var(--muted);font-size:.85rem">Formato de interpretación no reconocido.</p>';
+}
 
+function renderModal(t){
+  const nf=(t.archivos||[]).length;
+  const TABS=[
+    {id:'general',label:'📋 General'},
+    {id:'areas',label:'🧩 Áreas'},
+    {id:'aplicacion',label:'⚙️ Aplicación'},
+    {id:'interpretacion',label:'📊 Interpretación'},
+    {id:'bomberos',label:'🔥 Bomberos'},
+    {id:'archivos',label:`📁 Archivos${nf?` (${nf})`:''}` }
+  ];
+
+  const pGeneral=`
+    <div class="sec-block"><div class="sec-label">Autores / Adaptación</div><div class="autores-box">${t.autores}</div></div>
+    <div class="sec-block"><div class="sec-label">Objetivo</div><p class="obj-text">${t.objetivo}</p></div>
+    <div class="info-grid">
+      <div class="info-cell"><div class="info-cell-label">Duración</div><div class="info-cell-val">⏱ ${t.duracion}</div></div>
+      <div class="info-cell"><div class="info-cell-label">Población</div><div class="info-cell-val">👥 ${t.poblacion}</div></div>
+      <div class="info-cell"><div class="info-cell-label">Modalidad</div><div class="info-cell-val">📝 ${t.aplicacion?.modalidad||'–'}</div></div>
+      <div class="info-cell"><div class="info-cell-label">Categoría</div><div class="info-cell-val">${t.categoria}</div></div>
+    </div>
+    <div class="sec-block"><div class="sec-label">Validez y Confiabilidad</div><div class="validez-box">${t.validez}</div></div>
+    <div class="sec-block"><div class="sec-label">Materiales necesarios</div><div class="mats-grid">${(t.materiales||[]).map(m=>`<span class="mat-item">📌 ${m}</span>`).join('')}</div></div>`;
+
+  const pAreas=`<div class="sec-block"><div class="sec-label">${(t.areas||[]).length} áreas evaluadas</div><div class="areas-list">${(t.areas||[]).map(a=>`
+    <div class="area-row">
+      <div class="area-name"><span class="area-dot"></span>${a.nombre}${a.tipo?` <span class="area-tipo">(${a.tipo})</span>`:''}</div>
+      ${a.descripcion?`<div class="area-sub">${a.descripcion}</div>`:''}
+      ${a.subdimensiones&&a.subdimensiones.length?`<div class="area-subdims">${a.subdimensiones.map(s=>`<span class="area-subdim">${s}</span>`).join('')}</div>`:''}
+    </div>`).join('')}</div></div>`;
+
+  const pAplic=`
+    <div class="sec-block"><div class="sec-label">Modalidad</div><div class="info-cell" style="margin-bottom:14px"><div class="info-cell-val">📝 ${t.aplicacion?.modalidad||'–'}</div></div></div>
+    <div class="sec-block"><div class="sec-label">Instrucciones y procedimiento</div>${(t.aplicacion?.instrucciones||[]).map(i=>`<div class="aplic-item"><span class="aplic-arrow">▸</span>${i}</div>`).join('')}</div>
+    <div class="sec-block"><div class="sec-label">Calificación</div><div class="cal-text">${t.calificacion||'–'}</div></div>`;
+
+  const pInterp=`<div class="sec-block"><div class="sec-label">Tabla de interpretación</div>${buildInterp(t.interpretacion)}</div>`;
+
+  const pBomberos=`
+    <div class="sec-block"><div class="sec-label">Aplicación en selección de bomberos</div><div class="uso-list">${(t.uso_bomberos||[]).map(u=>`<div class="uso-item">${u}</div>`).join('')}</div></div>
+    <div class="sec-block" style="margin-top:20px"><div class="sec-label">Limitaciones</div><div class="lim-list">${(t.limitaciones||[]).map(l=>`<div class="lim-item">${l}</div>`).join('')}</div></div>`;
+
+  const pArchivos=!nf
+    ?`<div class="files-empty"><span>📭</span>Este test no tiene archivos asociados aún.<br><small style="color:var(--muted)">Agrega archivos en <code>tests.json → archivos</code>.</small></div>`
+    :`<div class="sec-block"><div class="sec-label">${nf} archivo${nf!==1?'s':''} disponibles</div><div class="files-list">${(t.archivos||[]).map(f=>{const ex=extOf(f.nombre);return`<a class="file-row" href="${f.ruta}" target="_blank"><div class="file-ext" style="background:${ex.bg}">${ex.i}</div><div class="file-info"><div class="file-name">${f.nombre}</div><div class="file-path">📂 ${f.ruta}</div></div>${ftag(f.tipo)}<span class="file-open">↗</span></a>`}).join('')}</div></div>`;
+
+  const panels={general:pGeneral,areas:pAreas,aplicacion:pAplic,interpretacion:pInterp,bomberos:pBomberos,archivos:pArchivos};
+
+  document.getElementById('modal-box').innerHTML=`
+    <div class="m-header">
+      <div class="m-stripe" style="background:linear-gradient(90deg,${t.color||'#e8460a'},transparent)"></div>
+      <button class="m-close" onclick="closeModal()">✕</button>
+      <div class="m-top">
+        <span class="m-emoji">${t.emoji||'📋'}</span>
+        <div>
+          <span class="m-sigla">${t.sigla} · ${t.categoria}</span>
+          <h2 class="m-name">${t.nombre}</h2>
+          <div class="m-badges">
+            <span class="m-badge fire">⏱ ${t.duracion}</span>
+            <span class="m-badge">👥 ${(t.poblacion||'').split(',')[0]||'–'}</span>
+            <span class="m-badge">${nf>0?`📁 ${nf} archivos`:'📭 Sin archivos'}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="m-tabs">${TABS.map(tb=>`<button class="m-tab${currentTab===tb.id?' active':''}" onclick="switchTab('${tb.id}')">${tb.label}</button>`).join('')}</div>
+    <div class="m-body">${Object.entries(panels).map(([id,html])=>`<div class="m-panel${currentTab===id?' active':''}">${html}</div>`).join('')}</div>`;
+}
+
+window.addEventListener('DOMContentLoaded',loadData);
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+</script>
 </body>
 </html>
