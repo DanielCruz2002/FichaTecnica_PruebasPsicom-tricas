@@ -69,6 +69,32 @@
                     "name": "Test Disc.xls"
                 }
             ]
+        },
+        {
+            "type": "FISICO",
+            "name": "mbti",
+            "files": [
+                {
+                    "tipo": "CALCULATOR",
+                    "nombre": "Test MBTI (completo).xlsx",
+                    "ruta": "files/mbti/Test MBTI (completo).xlsx"
+                },
+                {
+                    "tipo": "EJEMPLO",
+                    "nombre": "Test MBTI (completo)-ejemplo resuelto.xlsx",
+                    "ruta": "files/mbti/Test MBTI (completo)-ejemplo resuelto.xlsx"
+                },
+                {
+                    "tipo": "EXAMEN",
+                    "nombre": "Test MBTI (manual) con prueba versión corta.pdf",
+                    "ruta": "files/mbti/Test MBTI (manual) con prueba versión corta.pdf"
+                },
+                {
+                    "tipo": "INTEPRETACION",
+                    "nombre": "Test MBTI (guía personalidades).pdf",
+                    "ruta": "files/mbti/Test MBTI (guía personalidades).pdf"
+                }
+            ]
         }
     ]
 }

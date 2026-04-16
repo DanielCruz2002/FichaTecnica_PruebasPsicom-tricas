@@ -141,7 +141,23 @@
         "Requiere interpretación con base en normas percentilares y en el contexto del evaluado.",
         "Debe complementarse con entrevista, observación y otras pruebas psicológicas."
       ],
-      "archivos": []
+      "archivos": [
+        { 
+          "tipo": "EXAMEN", 
+          "nombre": "pdf-cuadernillo.pdf", 
+          "ruta": "files/gordon/pdf-cuadernillo.pdf" 
+        },
+        { 
+          "tipo": "INFORMATIVE", 
+          "nombre": "Manual.pdf", 
+          "ruta": "files/gordon/Manual.pdf" 
+        },
+        { 
+          "tipo": "INFORMATIVE", 
+          "nombre": "Manual.pdf", 
+          "ruta": "files/gordon/Manual.pdf" 
+        }
+      ]
     },
     {
       "id": "otis",
@@ -404,8 +420,16 @@
         "Su desempeño psicométrico en adultos ha sido cuestionado en investigación reciente."
       ],
       "archivos": [
-        { "tipo": "CALCULATOR", "nombre": "Barsit.xlsx", "ruta": "files/barsit/Barsit.xlsx" },
-        { "tipo": "EXAMEN", "nombre": "Test Habilidad Mental BARSIT (manual).pdf", "ruta": "files/barsit/Test Habilidad Mental BARSIT (manual).pdf" }
+        { 
+          "tipo": "CALCULATOR", 
+          "nombre": "Barsit.xlsx", 
+          "ruta": "files/barsit/Barsit.xlsx" 
+        },
+        { 
+          "tipo": "EXAMEN", 
+          "nombre": "Test Habilidad Mental BARSIT (manual).pdf", 
+          "ruta": "files/barsit/Test Habilidad Mental BARSIT (manual).pdf" 
+        }
       ]
     },
     {
@@ -460,7 +484,28 @@
         "Puede verse influido por la autopercepción y el contexto del evaluado.",
         "Es un instrumento de orientación, no de diagnóstico clínico."
       ],
-      "archivos": []
+      "archivos": [
+                {
+                    "tipo": "CALCULATOR",
+                    "nombre": "Test MBTI (completo).xlsx",
+                    "ruta": "files/mbti/Test MBTI (completo).xlsx"
+                },
+                {
+                    "tipo": "EJEMPLO",
+                    "nombre": "Test MBTI (completo)-ejemplo resuelto.xlsx",
+                    "ruta": "files/mbti/Test MBTI (completo)-ejemplo resuelto.xlsx"
+                },
+                {
+                    "tipo": "EXAMEN",
+                    "nombre": "Test MBTI (manual) con prueba versión corta.pdf",
+                    "ruta": "files/mbti/Test MBTI (manual) con prueba versión corta.pdf"
+                },
+                {
+                    "tipo": "INTEPRETACION",
+                    "nombre": "Test MBTI (guía personalidades).pdf",
+                    "ruta": "files/mbti/Test MBTI (guía personalidades).pdf"
+                }
+      ]
     },
     {
       "id": "bfq",
@@ -520,7 +565,43 @@
         "No sustituye evaluación clínica profunda.",
         "Debe interpretarse junto con otros datos del proceso de evaluación."
       ],
-      "archivos": []
+      "archivos": [
+        { 
+          "tipo": "INFORMATIVE", 
+          "nombre": "BIG FIVE MANUAL COMPLETO.pdf", 
+          "ruta": "files/bfq/BIG FIVE MANUAL COMPLETO.pdf" 
+        },
+        { 
+          "tipo": "EXAMEN", 
+          "nombre": "Hoja de Respuesta BFQ.xlsx", 
+          "ruta": "files/bfq/Hoja de Respuesta BFQ.xlsx" 
+        },
+        { 
+          "tipo": "EXAMEN", 
+          "nombre": "Cuadernillo BFQ.pdf", 
+          "ruta": "files/bfq/Cuadernillo BFQ.pdf" 
+        },
+        { 
+          "tipo": "CALCULATOR", 
+          "nombre": "BFQ plantilla de calificación.xlsx", 
+          "ruta": "files/bfq/BFQ plantilla de calificación.xlsx" 
+        },
+        { 
+          "tipo": "INTEPRETACION", 
+          "nombre": "BFQ PERSONALIDAD CALIFICACIÓN E INTERPRETACIÓN.xlsx", 
+          "ruta": "files/bfq/BFQ PERSONALIDAD CALIFICACIÓN E INTERPRETACIÓN.xlsx" 
+        },
+        { 
+          "tipo": "CALIFICACION", 
+          "nombre": "BFQ Preguntas-modo de interpretación.docx", 
+          "ruta": "files/bfq/BFQ Preguntas-modo de interpretación.docx" 
+        },
+        { 
+          "tipo": "INFORMATIVE", 
+          "nombre": "BFQ manual de interpretacion.docx", 
+          "ruta": "files/bfq/BFQ manual de interpretacion.docx" 
+        }
+      ]
     },
     {
       "id": "wpt",
@@ -573,7 +654,23 @@
         "El tiempo limitado puede afectar el desempeño de algunos evaluados.",
         "No sustituye una evaluación psicológica o neuropsicológica más amplia."
       ],
-      "archivos": []
+      "archivos": [
+        { 
+          "tipo": "INFORMATIVE", 
+          "nombre": "Manual Wonderlic.pdf", 
+          "ruta": "files/wpt/Manual Wonderlic.pdf" 
+        },
+        { 
+          "tipo": "INFORMATIVE", 
+          "nombre": "wonderlic.pptx", 
+          "ruta": "files/wpt/wonderlic.pptx" 
+        },
+        { 
+          "tipo": "EXAMEN", 
+          "nombre": "WPT-Cuestionario.pdf", 
+          "ruta": "files/wpt/WPT-Cuestionario.pdf"
+        }
+      ]
     }
   ]
 }
