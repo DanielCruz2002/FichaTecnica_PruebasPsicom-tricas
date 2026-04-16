@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Glosario · Fichas Psicométricas · HBCBH</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Barlow:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --red:#d81010;--red-dark:#a50c0c;
+  --cyan:#00b8d4;--cyan-dark:#0097b2;--cyan-light:#33cce4;
+  --white:#ffffff;
+  --gray-50:#f8f9fa;--gray-100:#f0f2f5;--gray-200:#e2e6ea;
+  --gray-300:#c8cdd4;--gray-500:#6b7280;--gray-700:#374151;--gray-900:#111827;
+  --text:#1f2937;--text2:#4b5563;
+}
+html{scroll-behavior:smooth}
+body{background:var(--gray-50);color:var(--text);font-family:'Inter',sans-serif;font-weight:400;line-height:1.6;min-height:100vh}
+::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:var(--gray-100)}::-webkit-scrollbar-thumb{background:var(--red);border-radius:99px}
+
+/* TOP BAR */
+.topbar{background:var(--red);padding:6px 24px;display:flex;align-items:center;justify-content:space-between}
+.topbar-left{font-family:'Barlow',sans-serif;font-size:.72rem;font-weight:600;color:rgba(255,255,255,.85);letter-spacing:.04em;text-transform:uppercase}
+.topbar-right{font-size:.7rem;color:rgba(255,255,255,.7)}
+
+/* HEADER */
+.header{background:var(--white);border-bottom:3px solid var(--red);padding:0 24px;position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,.08)}
+.header-inner{max-width:1160px;margin:0 auto;display:flex;align-items:center;gap:20px;height:72px;flex-wrap:wrap}
+.logo{display:flex;align-items:center;gap:14px;flex-shrink:0;text-decoration:none}
+.logo-icon{width:48px;height:48px;background:var(--red);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:24px;box-shadow:0 3px 10px rgba(216,16,16,.3);flex-shrink:0}
+.logo-name{font-family:'Barlow',sans-serif;font-size:1.05rem;font-weight:800;color:var(--red);line-height:1;display:block}
+.logo-dept{font-size:.68rem;font-weight:500;color:var(--gray-500);letter-spacing:.03em;display:block}
+.header-divider{width:1px;height:36px;background:var(--gray-200);flex-shrink:0}
+.header-title{font-family:'Barlow',sans-serif;font-size:.95rem;font-weight:700;color:var(--gray-700)}
+.nav-links{margin-left:auto;display:flex;align-items:center;gap:6px}
+.nav-btn{font-family:inherit;font-size:.78rem;font-weight:500;padding:7px 14px;border-radius:7px;border:1.5px solid var(--gray-200);background:var(--white);color:var(--gray-700);cursor:pointer;text-decoration:none;transition:all .18s;white-space:nowrap}
+.nav-btn:hover{border-color:var(--cyan);color:var(--cyan-dark);background:rgba(0,184,212,.05)}
+.nav-btn.active{background:var(--red);border-color:var(--red);color:var(--white);font-weight:600}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,#0097b2 0%,var(--cyan) 60%,#33cce4 100%);padding:40px 24px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M20 20.5V18H0v5h5v5H0v5h20v-2.5zM0 5V0h5v5H0zm10 0V0h5v5h-5zm10 0V0h5v5h-5zm0 10V10h5v5h-5z'/%3E%3C/g%3E%3C/svg%3E")}
+.hero-inner{max-width:1160px;margin:0 auto;position:relative;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.hero-text{}
+.hero-eyebrow{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:10px}
+.hero-title{font-family:'Barlow',sans-serif;font-size:2rem;font-weight:800;color:var(--white);line-height:1.15;margin-bottom:8px}
+.hero-sub{font-size:.88rem;color:rgba(255,255,255,.8);max-width:520px;line-height:1.6}
+.hero-search-wrap{flex-shrink:0}
+.hero-search{
+  display:flex;align-items:center;gap:0;
+  background:var(--white);border-radius:10px;overflow:hidden;
+  box-shadow:0 4px 20px rgba(0,0,0,.15);
+}
+#glosario-search{
+  font-family:inherit;font-size:.85rem;color:var(--text);
+  padding:11px 16px;border:none;outline:none;width:240px;background:transparent;
+}
+#glosario-search::placeholder{color:var(--gray-300)}
+.hero-search-btn{
+  background:var(--cyan);color:var(--white);
+  border:none;padding:11px 16px;font-size:1rem;cursor:pointer;
+  transition:background .18s;
+}
+.hero-search-btn:hover{background:var(--cyan-dark)}
+
+/* MAIN */
+main{max-width:1160px;margin:0 auto;padding:32px 20px 60px;display:grid;grid-template-columns:1fr 260px;gap:24px;align-items:start}
+
+/* GLOSSARY AREA */
+.glossary-area{display:flex;flex-direction:column;gap:16px}
+
+/* Alphabet nav */
+.alpha-nav{background:var(--white);border:1px solid var(--gray-200);border-radius:12px;padding:14px 18px;box-shadow:0 1px 4px rgba(0,0,0,.05)}
+.alpha-nav-inner{display:flex;flex-wrap:wrap;gap:4px}
+.alpha-btn{
+  font-family:'Barlow',sans-serif;font-size:.82rem;font-weight:700;
+  width:32px;height:32px;border-radius:6px;
+  border:1.5px solid var(--gray-200);background:var(--white);
+  color:var(--gray-700);cursor:pointer;transition:all .15s;
+  display:flex;align-items:center;justify-content:center;
+}
+.alpha-btn:hover{border-color:var(--cyan);color:var(--cyan-dark);background:rgba(0,184,212,.06)}
+.alpha-btn.has-terms{border-color:var(--gray-300);color:var(--gray-900);font-weight:700}
+.alpha-btn.active-alpha{background:var(--cyan);border-color:var(--cyan);color:var(--white)}
+.alpha-btn:disabled{color:var(--gray-300);border-color:var(--gray-100);cursor:default;background:var(--gray-50)}
+
+/* Results count */
+.results-info{font-size:.78rem;color:var(--gray-500);padding:4px 0}
+#results-count{}
+
+/* Term group */
+.term-group{animation:fadeUp .3s ease both}
+@keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.group-letter{
+  font-family:'Barlow',sans-serif;font-size:1.6rem;font-weight:800;
+  color:var(--white);
+  width:44px;height:44px;border-radius:10px;
+  background:var(--cyan);
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:10px;
+  box-shadow:0 3px 10px rgba(0,184,212,.3);
+}
+.terms-stack{display:flex;flex-direction:column;gap:8px;margin-bottom:24px}
+
+/* Term card */
+.term-card{
+  background:var(--white);border:1px solid var(--gray-200);
+  border-left:4px solid var(--cyan);
+  border-radius:0 10px 10px 0;
+  padding:16px 20px;
+  box-shadow:0 1px 3px rgba(0,0,0,.05);
+  transition:all .18s;
+}
+.term-card:hover{border-color:var(--cyan-light);box-shadow:0 4px 14px rgba(0,0,0,.09);transform:translateX(2px)}
+.term-card.highlight-match{border-left-color:var(--red);background:rgba(216,16,16,.02)}
+.term-name{font-family:'Barlow',sans-serif;font-size:1rem;font-weight:800;color:var(--gray-900);margin-bottom:6px;display:flex;align-items:center;gap:8px}
+.term-category{font-size:.62rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:2px 8px;border-radius:4px;background:rgba(0,184,212,.1);color:var(--cyan-dark)}
+.term-def{font-size:.85rem;color:var(--text2);line-height:1.7}
+.term-example{margin-top:10px;font-size:.8rem;color:var(--gray-500);font-style:italic;border-top:1px solid var(--gray-100);padding-top:8px}
+.term-example strong{color:var(--gray-700);font-style:normal}
+
+/* No results */
+.no-terms{text-align:center;padding:40px 20px;color:var(--gray-500);background:var(--white);border:1px solid var(--gray-200);border-radius:12px}
+
+/* REFERENCES */
+.refs-card{background:var(--white);border:1px solid var(--gray-200);border-radius:14px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.05)}
+.refs-header{padding:16px 24px;background:var(--gray-50);border-bottom:1px solid var(--gray-200);display:flex;align-items:center;gap:10px}
+.refs-icon{width:36px;height:36px;background:#fef9c3;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px}
+.refs-title{font-family:'Barlow',sans-serif;font-size:.95rem;font-weight:800;color:var(--gray-900)}
+.refs-body{padding:20px 24px}
+.ref-item{
+  display:flex;align-items:flex-start;gap:10px;
+  padding:10px 0;border-bottom:1px solid var(--gray-100);
+  font-size:.8rem;color:var(--text2);line-height:1.6;
+}
+.ref-item:last-child{border-bottom:none}
+.ref-dot{width:6px;height:6px;border-radius:50%;background:var(--cyan);flex-shrink:0;margin-top:7px}
+.ref-item em{color:var(--gray-700)}
+
+/* SIDEBAR */
+.sidebar{display:flex;flex-direction:column;gap:16px;position:sticky;top:88px}
+.sidebar-card{background:var(--white);border:1px solid var(--gray-200);border-radius:12px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.05)}
+.sidebar-header{padding:14px 18px;background:var(--gray-50);border-bottom:1px solid var(--gray-200);font-family:'Barlow',sans-serif;font-size:.82rem;font-weight:700;color:var(--gray-700);display:flex;align-items:center;gap:7px}
+.sidebar-body{padding:16px 18px}
+.qnav-list{display:flex;flex-direction:column;gap:2px}
+.qnav-item{display:flex;align-items:center;gap:8px;font-size:.81rem;color:var(--gray-700);padding:7px 10px;border-radius:7px;text-decoration:none;cursor:pointer;transition:all .15s}
+.qnav-item:hover{background:rgba(0,184,212,.07);color:var(--cyan-dark)}
+.qnav-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.rel-link{display:flex;align-items:center;gap:8px;font-size:.8rem;color:var(--gray-700);padding:8px 10px;border-radius:7px;border:1px solid var(--gray-200);text-decoration:none;background:var(--gray-50);transition:all .15s;margin-bottom:6px}
+.rel-link:last-child{margin-bottom:0}
+.rel-link:hover{border-color:var(--cyan);color:var(--cyan-dark);background:rgba(0,184,212,.04)}
+.rel-arrow{color:var(--gray-400);font-size:.75rem;margin-left:auto}
+.stat-pill{display:flex;align-items:center;justify-content:space-between;padding:8px 12px;background:var(--gray-50);border:1px solid var(--gray-200);border-radius:8px;margin-bottom:6px}
+.stat-pill:last-child{margin-bottom:0}
+.stat-pill-label{font-size:.77rem;color:var(--text2)}
+.stat-pill-val{font-family:'Barlow',sans-serif;font-size:1rem;font-weight:800;color:var(--gray-900)}
+
+/* FOOTER */
+.footer{background:var(--red);padding:20px 24px;margin-top:20px}
+.footer-inner{max-width:1160px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.footer-text{font-size:.75rem;color:rgba(255,255,255,.8);font-family:'Barlow',sans-serif}
+.footer-text strong{color:var(--white)}
+.footer-badge{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);color:var(--white);font-size:.68rem;font-weight:600;padding:4px 12px;border-radius:6px;font-family:'Barlow',sans-serif;letter-spacing:.04em}
+
+mark{background:rgba(0,184,212,.2);color:var(--cyan-dark);border-radius:2px;padding:0 2px}
+
+@media(max-width:800px){
+  main{grid-template-columns:1fr}
+  .sidebar{position:static}
+  .hero-title{font-size:1.5rem}
+  #glosario-search{width:180px}
+}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <span class="topbar-left">Heroico y Benemérito Cuerpo de Bomberos de Honduras · HBCBH</span>
+  <span class="topbar-right">Depto. Psicosocial · Tegucigalpa, M.D.C.</span>
+</div>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-inner">
+    <a class="logo" href="index.html">
+      <div class="logo-icon">🔥</div>
+      <div>
+        <span class="logo-name">HBCBH</span>
+        <span class="logo-dept">Departamento de Psicosocial</span>
+      </div>
+    </a>
+    <div class="header-divider"></div>
+    <span class="header-title">Fichas Técnicas Psicométricas</span>
+    <nav class="nav-links">
+      <a class="nav-btn" href="introduccion.html">📄 Introducción</a>
+      <a class="nav-btn" href="index.html">🧪 Tests</a>
+      <a class="nav-btn active" href="glosario.html">📖 Glosario</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="hero-eyebrow">Referencia técnica · Psicometría</div>
+      <h1 class="hero-title">Glosario y Referencias</h1>
+      <p class="hero-sub">Términos técnicos y conceptos fundamentales de la evaluación psicométrica utilizados en las fichas.</p>
+    </div>
+    <div class="hero-search-wrap">
+      <div class="hero-search">
+        <input id="glosario-search" type="text" placeholder="Buscar término…" oninput="filterTerms()">
+        <button class="hero-search-btn">🔍</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN -->
+<main>
+  <div class="glossary-area">
+
+    <!-- ALPHABET NAV -->
+    <div class="alpha-nav">
+      <div class="alpha-nav-inner" id="alpha-nav"></div>
+    </div>
+
+    <!-- RESULTS INFO -->
+    <div class="results-info" id="results-count"></div>
+
+    <!-- TERMS -->
+    <div id="terms-container"></div>
+
+    <!-- REFERENCES -->
+    <div class="refs-card" id="referencias">
+      <div class="refs-header">
+        <div class="refs-icon">📚</div>
+        <span class="refs-title">Referencias bibliográficas</span>
+      </div>
+      <div class="refs-body">
+        <div class="ref-item"><span class="ref-dot"></span><span>Caprara, G. V., Barbaranelli, C., &amp; Borgogni, L. (2005). <em>BFQ. Cuestionario Big Five.</em> Hogrefe TEA Ediciones.</span></div>
+        <div class="ref-item"><span class="ref-dot"></span><span>Del Olmo, F. (1958). <em>Medición rápida de habilidad intelectual: Barsit.</em> El Manual Moderno, S. A. de C. V.</span></div>
+        <div class="ref-item"><span class="ref-dot"></span><span>Gordon, L. V. (2021). <em>PPG-IPG: Perfil e inventario de personalidad</em> (5.ª ed., revisada). Hogrefe TEA Ediciones.</span></div>
+        <div class="ref-item"><span class="ref-dot"></span><span>Kincannon, J. C. (1968). Prediction of the standard MMPI scale scores from 71 items: The mini-mult. <em>Journal of Consulting and Clinical Psychology, 32</em>(3), 319–325.</span></div>
+        <div class="ref-item"><span class="ref-dot"></span><span>Marston, W. M. (1928). <em>Emotions of normal people.</em> Harcourt, Brace and Company.</span></div>
+        <div class="ref-item"><span class="ref-dot"></span><span>Myers, I. B., McCaulley, M. H., Quenk, N. L., &amp; Hammer, A. L. (2018). <em>MBTI manual for the Global Step I and Step II assessments</em> (4th ed.). The Myers-Briggs Company.</span></div>
+        <div class="ref-item"><span class="ref-dot"></span><span>Otis, A. S. (2012). <em>Otis sencillo: Test de inteligencia general.</em> TEA Ediciones.</span></div>
+        <div class="ref-item"><span class="ref-dot"></span><span>Scullard, M., &amp; Baum, D. (2015). <em>Everything DiSC manual.</em> Wiley.</span></div>
+        <div class="ref-item"><span class="ref-dot"></span><span>Tiffin, J., Grubner, A., &amp; Inaba, K. (1963). <em>Test no verbal de la Universidad de Purdue</em> (2.ª ed.; W. Woyno &amp; R. E. Oñoro-Amador, trad. y adap.). Ediciones Pedagógicas Latino-Americanas Ltda.</span></div>
+        <div class="ref-item"><span class="ref-dot"></span><span>Wonderlic, Inc. (2014). <em>Wonderlic Personnel Test sample questions.</em> Wonderlic.</span></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-card">
+      <div class="sidebar-header">📊 Estadísticas</div>
+      <div class="sidebar-body">
+        <div class="stat-pill"><span class="stat-pill-label">Términos en glosario</span><span class="stat-pill-val" id="stat-total">–</span></div>
+        <div class="stat-pill"><span class="stat-pill-label">Referencias bibliográficas</span><span class="stat-pill-val">10</span></div>
+        <div class="stat-pill"><span class="stat-pill-label">Categorías</span><span class="stat-pill-val" id="stat-cats">–</span></div>
+      </div>
+    </div>
+
+    <div class="sidebar-card">
+      <div class="sidebar-header">🔗 En esta página</div>
+      <div class="sidebar-body">
+        <div class="qnav-list" id="qnav-letters"></div>
+        <div style="margin-top:8px">
+          <a class="qnav-item" href="#referencias"><span class="qnav-dot" style="background:#f59e0b"></span>Referencias</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="sidebar-card">
+      <div class="sidebar-header">🗂 Otros recursos</div>
+      <div class="sidebar-body">
+        <a class="rel-link" href="index.html"><span>🧪 Ver los 8 tests</span><span class="rel-arrow">→</span></a>
+        <a class="rel-link" href="introduccion.html"><span>📄 Introducción</span><span class="rel-arrow">→</span></a>
+      </div>
+    </div>
+  </aside>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-text">
+      <strong>Heroico y Benemérito Cuerpo de Bomberos de Honduras</strong><br>
+      Fichas técnicas de pruebas psicométricas para selección de bomberos · Elaborado por Reyna Alicia Cruz Hernández · Abril 2026
+    </div>
+    <span class="footer-badge">Licenciatura en Psicología</span>
+  </div>
+</footer>
+
+<script>
+// ── GLOSARIO DE TÉRMINOS ──────────────────────────────────────────────────────
+const TERMS = [
+  {
+    term: "Baremos",
+    letra: "B",
+    categoria: "Estadística",
+    definicion: "Tablas normativas que permiten comparar el resultado de una persona con el de un grupo de referencia (muestra normativa). Transforman una puntuación directa en una posición relativa dentro de la distribución.",
+    ejemplo: "Si un evaluado obtiene 42 puntos brutos en el Barsit, los baremos permiten saber si ese puntaje es Mediano, Superior o Excelente comparado con su grupo de referencia."
+  },
+  {
+    term: "Centil",
+    letra: "C",
+    categoria: "Estadística",
+    definicion: "Posición relativa de un puntaje dentro de una distribución. Indica el porcentaje de personas del grupo normativo que obtuvieron un puntaje igual o menor al del evaluado. Rango: 1 a 99.",
+    ejemplo: "Un centil 75 significa que el evaluado supera al 75% de su grupo de referencia."
+  },
+  {
+    term: "Confiabilidad",
+    letra: "C",
+    categoria: "Psicometría",
+    definicion: "Grado de consistencia o estabilidad de una prueba. Una prueba es confiable cuando, aplicada en condiciones similares, produce resultados similares. Se expresa generalmente como un coeficiente que va de 0 a 1.",
+    ejemplo: "El OTIS Sencillo reporta una confiabilidad de 0.92 mediante el método de dos mitades, lo que indica alta consistencia interna."
+  },
+  {
+    term: "Coeficiente de correlación",
+    letra: "C",
+    categoria: "Estadística",
+    definicion: "Medida estadística que indica la fuerza y dirección de la relación lineal entre dos variables. Varía entre -1 y +1. Valores cercanos a +1 o -1 indican una relación fuerte; cercanos a 0 indican poca o ninguna relación.",
+    ejemplo: "Una correlación de 0.71 entre el PMA y el OTIS Sencillo indica una relación positiva considerable entre ambas medidas de inteligencia."
+  },
+  {
+    term: "Cociente Intelectual (CI)",
+    letra: "C",
+    categoria: "Evaluación cognitiva",
+    definicion: "Puntuación derivada que estima la capacidad intelectual general de una persona, comparada con un grupo normativo de su misma edad. La media es típicamente 100 con desviación estándar de 15.",
+    ejemplo: "En el OTIS Sencillo, un CI estimado entre 91 y 100 se clasifica como Superior."
+  },
+  {
+    term: "Deseabilidad social",
+    letra: "D",
+    categoria: "Sesgo",
+    definicion: "Tendencia de los evaluados a responder de manera socialmente aceptable o favorable, independientemente de su verdadera forma de ser. Es un sesgo que puede distorsionar los resultados de pruebas de personalidad.",
+    ejemplo: "En el Mini-Mult (MMPI), la escala L (Mentira) detecta si el evaluado está respondiendo de forma socialmente deseable para parecer bien adaptado."
+  },
+  {
+    term: "Eneatipo",
+    letra: "E",
+    categoria: "Estadística",
+    definicion: "Puntuación derivada que divide la distribución de puntajes en nueve categorías iguales (del 1 al 9). Media = 5, desviación estándar ≈ 2. Es una transformación de la puntuación directa usada en algunos baremos.",
+    ejemplo: "El OTIS Sencillo permite transformar la puntuación directa a eneatipos como medida de posición relativa."
+  },
+  {
+    term: "Escala T",
+    letra: "E",
+    categoria: "Estadística",
+    definicion: "Puntuación tipificada con media de 50 y desviación estándar de 10. Permite comparar resultados entre distintas escalas o pruebas con diferentes métricas. Es el sistema de puntuación estándar del Mini-Mult y del BFQ.",
+    ejemplo: "En el BFQ, una puntuación T de 65 en Energía indica presencia Alta del rasgo, por encima de la media (50)."
+  },
+  {
+    term: "Estandarización",
+    letra: "E",
+    categoria: "Psicometría",
+    definicion: "Proceso de aplicar una prueba bajo condiciones uniformes y controladas, con procedimientos idénticos para todos los evaluados, y de desarrollar normas basadas en muestras representativas.",
+    ejemplo: "Las pruebas psicométricas deben aplicarse en condiciones estandarizadas: mismo tiempo, mismas instrucciones, mismo ambiente."
+  },
+  {
+    term: "Fiabilidad",
+    letra: "F",
+    categoria: "Psicometría",
+    definicion: "Sinónimo de confiabilidad. Grado en que una prueba produce resultados consistentes y reproducibles. Se puede medir mediante distintos métodos: test-retest, dos mitades, consistencia interna (alfa de Cronbach).",
+    ejemplo: "El PPG-IPG reporta coeficientes de fiabilidad entre 0.70 y 0.85, considerados adecuados para instrumentos de personalidad."
+  },
+  {
+    term: "Instrumento psicométrico",
+    letra: "I",
+    categoria: "General",
+    definicion: "Herramienta de medición psicológica estandarizada que permite cuantificar atributos psicológicos (inteligencia, personalidad, aptitudes, etc.) de manera sistemática y objetiva.",
+    ejemplo: "El BFQ, el DISC y el Purdue son ejemplos de instrumentos psicométricos con diferentes propósitos de medición."
+  },
+  {
+    term: "Interpretación",
+    letra: "I",
+    categoria: "Evaluación",
+    definicion: "Proceso de dar significado a las puntuaciones obtenidas en una prueba, comparándolas con normas o criterios establecidos. Implica el juicio profesional del psicólogo para contextualizar los resultados.",
+    ejemplo: "Un puntaje de 130 o más en el Purdue se interpreta como 'Muy Superior' en la categoría de inteligencia no verbal."
+  },
+  {
+    term: "Muestra normativa",
+    letra: "M",
+    categoria: "Estadística",
+    definicion: "Grupo de personas representativo de una población, utilizado para construir los baremos o normas de una prueba. Sus puntajes sirven como referencia para interpretar los resultados individuales.",
+    ejemplo: "Los baremos del OTIS Sencillo están diferenciados por edad, curso, sexo y grupo profesional, lo que permite comparaciones más precisas."
+  },
+  {
+    term: "Percentil",
+    letra: "P",
+    categoria: "Estadística",
+    definicion: "Ver Centil. Valor que indica el porcentaje de individuos en la muestra normativa que obtuvieron una puntuación igual o inferior a la del evaluado.",
+    ejemplo: "Un percentil 90 significa que el evaluado supera al 90% de las personas de su grupo normativo."
+  },
+  {
+    term: "Perfil psicológico",
+    letra: "P",
+    categoria: "Evaluación",
+    definicion: "Representación gráfica o descriptiva del conjunto de resultados de un evaluado en múltiples escalas o dimensiones de una prueba. Permite visualizar patrones de fortalezas y áreas a desarrollar.",
+    ejemplo: "El DISC genera tres gráficas (Perfil Emocional, Adaptativo e Integral) que forman el perfil conductual del evaluado."
+  },
+  {
+    term: "Psicometría",
+    letra: "P",
+    categoria: "General",
+    definicion: "Rama de la psicología que se ocupa de la medición de variables psicológicas. Desarrolla y valida instrumentos de medición, y establece los procedimientos para su administración, calificación e interpretación.",
+    ejemplo: "Las fichas técnicas de este documento se basan en principios psicométricos para describir la validez, confiabilidad y normas de cada prueba."
+  },
+  {
+    term: "Puntuación directa",
+    letra: "P",
+    categoria: "Estadística",
+    definicion: "Resultado bruto obtenido antes de transformarlo en escalas normativas. Es el número de respuestas correctas, o el puntaje total acumulado, sin ninguna transformación. Por sí sola no permite comparaciones entre pruebas.",
+    ejemplo: "Si un evaluado acierta 38 preguntas en el Barsit, su puntuación directa es 38. Esta se compara con los baremos para determinar si es Mediano, Superior, etc."
+  },
+  {
+    term: "Puntuación T",
+    letra: "P",
+    categoria: "Estadística",
+    definicion: "Ver Escala T. Transformación de la puntuación directa a una escala con media 50 y desviación estándar 10, usada en instrumentos como el MMPI-Mini-Mult y el BFQ.",
+    ejemplo: "En el Mini-Mult, puntuaciones T ≥ 70 en las escalas clínicas se consideran elevadas y clínicamente significativas."
+  },
+  {
+    term: "Reactivo",
+    letra: "R",
+    categoria: "General",
+    definicion: "Cada uno de los ítems, preguntas o estímulos que componen una prueba psicológica. También se llama ítem. Los reactivos son la unidad básica de medición en cualquier instrumento psicométrico.",
+    ejemplo: "El Mini-Mult consta de 71 reactivos (ítems), a diferencia del MMPI completo que tiene más de 500."
+  },
+  {
+    term: "Sesgo de respuesta",
+    letra: "S",
+    categoria: "Sesgo",
+    definicion: "Tendencia sistemática a responder de una manera particular independientemente del contenido del ítem. Incluye la aquiescencia (responder siempre 'sí'), la deseabilidad social y la tendencia a marcar respuestas extremas.",
+    ejemplo: "Las escalas de validez del Mini-Mult (L, F, K) están diseñadas para detectar diferentes tipos de sesgo de respuesta."
+  },
+  {
+    term: "Test proyectivo",
+    letra: "T",
+    categoria: "Evaluación",
+    definicion: "Instrumento de evaluación en el que se presentan estímulos ambiguos (manchas de tinta, imágenes) y el sujeto proyecta en ellos sus características psicológicas. Contrasta con las pruebas objetivas incluidas en este documento.",
+    ejemplo: "A diferencia del Purdue o el BFQ, el Rorschach es un test proyectivo. Las fichas de este documento corresponden exclusivamente a pruebas objetivas y estandarizadas."
+  },
+  {
+    term: "Validez",
+    letra: "V",
+    categoria: "Psicometría",
+    definicion: "Grado en que una prueba mide lo que pretende medir. Existen varios tipos: validez de contenido (los ítems representan el constructo), validez de constructo (la prueba mide el constructo teórico) y validez predictiva (predice un criterio externo).",
+    ejemplo: "El WPT presenta evidencia de validez predictiva porque sus puntajes se asocian con el desempeño laboral en contextos de selección."
+  },
+  {
+    term: "Validez de constructo",
+    letra: "V",
+    categoria: "Psicometría",
+    definicion: "Evidencia de que una prueba mide el constructo teórico que pretende medir. Se evalúa mediante análisis factorial, correlaciones con otras medidas del mismo constructo y diferencias entre grupos conocidos.",
+    ejemplo: "El BFQ tiene validez de constructo confirmada: el análisis factorial reveló cinco factores coherentes con el modelo de los Cinco Grandes."
+  },
+  {
+    term: "Variable psicológica",
+    letra: "V",
+    categoria: "General",
+    definicion: "Característica o atributo psicológico que puede ser medido y que varía entre personas. Ejemplos: inteligencia, ansiedad, extroversión, responsabilidad. Las pruebas psicométricas buscan cuantificar estas variables.",
+    ejemplo: "La Estabilidad emocional es una variable psicológica medida por el PPG-IPG y el BFQ, relevante para la selección de bomberos."
+  }
+];
+
+// ── BUILD PAGE ────────────────────────────────────────────────────────────────
+let activeAlpha = 'all';
+
+function groupByLetter(terms) {
+  const groups = {};
+  terms.forEach(t => {
+    const l = t.letra;
+    if (!groups[l]) groups[l] = [];
+    groups[l].push(t);
+  });
+  return groups;
+}
+
+function highlight(text, q) {
+  if (!q) return text;
+  const re = new RegExp(`(${q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')})`, 'gi');
+  return text.replace(re, '<mark>$1</mark>');
+}
+
+function renderAll(terms, q) {
+  const container = document.getElementById('terms-container');
+  const countEl   = document.getElementById('results-count');
+  container.innerHTML = '';
+
+  if (!terms.length) {
+    container.innerHTML = '<div class="no-terms"><p style="font-size:1.5rem;margin-bottom:8px">🔍</p>No se encontraron términos con ese criterio.</div>';
+    countEl.textContent = '';
+    return;
+  }
+
+  countEl.textContent = `Mostrando ${terms.length} término${terms.length!==1?'s':''} ${q?`para "${q}"`:''}`;
+
+  const groups = groupByLetter(terms);
+  Object.keys(groups).sort().forEach(letter => {
+    const div = document.createElement('div');
+    div.className = 'term-group';
+    div.id = 'letra-'+letter;
+    let html = `<div class="group-letter">${letter}</div><div class="terms-stack">`;
+    groups[letter].forEach(t => {
+      const isMatch = q && (t.term.toLowerCase().includes(q) || t.definicion.toLowerCase().includes(q));
+      html += `
+        <div class="term-card${isMatch?' highlight-match':''}">
+          <div class="term-name">${highlight(t.term, q)} <span class="term-category">${t.categoria}</span></div>
+          <div class="term-def">${highlight(t.definicion, q)}</div>
+          ${t.ejemplo?`<div class="term-example"><strong>Ejemplo:</strong> ${highlight(t.ejemplo, q)}</div>`:''}
+        </div>`;
+    });
+    html += '</div>';
+    div.innerHTML = html;
+    container.appendChild(div);
+  });
+}
+
+function filterTerms() {
+  const q = document.getElementById('glosario-search').value.toLowerCase().trim();
+  let filtered = TERMS;
+  if (activeAlpha !== 'all') filtered = filtered.filter(t => t.letra === activeAlpha);
+  if (q) filtered = filtered.filter(t =>
+    t.term.toLowerCase().includes(q) ||
+    t.definicion.toLowerCase().includes(q) ||
+    t.categoria.toLowerCase().includes(q) ||
+    (t.ejemplo||'').toLowerCase().includes(q)
+  );
+  renderAll(filtered, q);
+}
+
+function buildAlphaNav() {
+  const letters = [...new Set(TERMS.map(t=>t.letra))].sort();
+  const allLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+  const nav = document.getElementById('alpha-nav');
+  const qnav = document.getElementById('qnav-letters');
+
+  const allBtn = document.createElement('button');
+  allBtn.className = 'alpha-btn has-terms active-alpha';
+  allBtn.textContent = 'Todos';
+  allBtn.style.width = 'auto';
+  allBtn.style.padding = '0 10px';
+  allBtn.onclick = () => { activeAlpha='all'; document.querySelectorAll('.alpha-btn').forEach(b=>b.classList.remove('active-alpha')); allBtn.classList.add('active-alpha'); filterTerms(); };
+  nav.appendChild(allBtn);
+
+  allLetters.forEach(l => {
+    const btn = document.createElement('button');
+    btn.className = 'alpha-btn';
+    btn.textContent = l;
+    if (letters.includes(l)) {
+      btn.classList.add('has-terms');
+      btn.onclick = () => {
+        activeAlpha = l;
+        document.querySelectorAll('.alpha-btn').forEach(b=>b.classList.remove('active-alpha'));
+        btn.classList.add('active-alpha');
+        filterTerms();
+        setTimeout(()=>{ const el=document.getElementById('letra-'+l); if(el) el.scrollIntoView({behavior:'smooth',block:'start'}); }, 50);
+      };
+    } else {
+      btn.disabled = true;
+    }
+    nav.appendChild(btn);
+  });
+
+  // Quick nav in sidebar
+  letters.forEach(l => {
+    const a = document.createElement('a');
+    a.className = 'qnav-item';
+    a.innerHTML = `<span class="qnav-dot" style="background:var(--cyan)"></span>Letra ${l}`;
+    a.onclick = () => { const el=document.getElementById('letra-'+l); if(el) el.scrollIntoView({behavior:'smooth',block:'start'}); };
+    qnav.appendChild(a);
+  });
+}
+
+function buildStats() {
+  document.getElementById('stat-total').textContent = TERMS.length;
+  document.getElementById('stat-cats').textContent = [...new Set(TERMS.map(t=>t.categoria))].length;
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  buildAlphaNav();
+  buildStats();
+  renderAll(TERMS, '');
+});
+</script>
+</body>
+</html>

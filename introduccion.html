@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Introducción · Fichas Psicométricas · HBCBH</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Barlow:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --red:#d81010;--red-dark:#a50c0c;--red-light:#f44040;
+  --cyan:#00b8d4;--cyan-dark:#0097b2;--cyan-light:#33cce4;
+  --white:#ffffff;
+  --gray-50:#f8f9fa;--gray-100:#f0f2f5;--gray-200:#e2e6ea;
+  --gray-300:#c8cdd4;--gray-500:#6b7280;--gray-700:#374151;--gray-900:#111827;
+  --text:#1f2937;--text2:#4b5563;
+}
+html{scroll-behavior:smooth}
+body{background:var(--gray-50);color:var(--text);font-family:'Inter',sans-serif;font-weight:400;line-height:1.6;min-height:100vh}
+::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:var(--gray-100)}::-webkit-scrollbar-thumb{background:var(--red);border-radius:99px}
+
+/* TOP BAR */
+.topbar{background:var(--red);padding:6px 24px;display:flex;align-items:center;justify-content:space-between}
+.topbar-left{font-family:'Barlow',sans-serif;font-size:.72rem;font-weight:600;color:rgba(255,255,255,.85);letter-spacing:.04em;text-transform:uppercase}
+.topbar-right{font-size:.7rem;color:rgba(255,255,255,.7)}
+
+/* HEADER */
+.header{background:var(--white);border-bottom:3px solid var(--red);padding:0 24px;position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,.08)}
+.header-inner{max-width:1160px;margin:0 auto;display:flex;align-items:center;gap:20px;height:72px;flex-wrap:wrap}
+.logo{display:flex;align-items:center;gap:14px;flex-shrink:0;text-decoration:none}
+.logo-icon{width:48px;height:48px;background:var(--red);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:24px;box-shadow:0 3px 10px rgba(216,16,16,.3);flex-shrink:0}
+.logo-texts{display:flex;flex-direction:column;gap:1px}
+.logo-name{font-family:'Barlow',sans-serif;font-size:1.05rem;font-weight:800;color:var(--red);line-height:1;letter-spacing:.01em}
+.logo-dept{font-size:.68rem;font-weight:500;color:var(--gray-500);letter-spacing:.03em}
+.header-divider{width:1px;height:36px;background:var(--gray-200);flex-shrink:0}
+.header-title{font-family:'Barlow',sans-serif;font-size:.95rem;font-weight:700;color:var(--gray-700)}
+.nav-links{margin-left:auto;display:flex;align-items:center;gap:6px}
+.nav-btn{font-family:inherit;font-size:.78rem;font-weight:500;padding:7px 14px;border-radius:7px;border:1.5px solid var(--gray-200);background:var(--white);color:var(--gray-700);cursor:pointer;text-decoration:none;transition:all .18s;white-space:nowrap}
+.nav-btn:hover{border-color:var(--cyan);color:var(--cyan-dark);background:rgba(0,184,212,.05)}
+.nav-btn.active{background:var(--red);border-color:var(--red);color:var(--white);font-weight:600}
+
+/* NAV STRIP */
+.nav-strip{background:var(--white);border-bottom:1px solid var(--gray-200);padding:10px 24px}
+.nav-strip-inner{max-width:1160px;margin:0 auto;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.strip-label{font-size:.7rem;font-weight:600;color:var(--gray-500);text-transform:uppercase;letter-spacing:.07em;margin-right:4px}
+
+/* HERO BANNER */
+.hero{
+  background:linear-gradient(135deg, var(--red-dark) 0%, var(--red) 50%, #c0392b 100%);
+  padding:48px 24px;
+  position:relative;overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+.hero-inner{max-width:1160px;margin:0 auto;position:relative}
+.hero-eyebrow{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.65);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.hero-eyebrow::before{content:'';display:block;width:24px;height:2px;background:rgba(255,255,255,.4)}
+.hero-title{font-family:'Barlow',sans-serif;font-size:2.2rem;font-weight:800;color:var(--white);line-height:1.15;margin-bottom:12px}
+.hero-sub{font-size:.92rem;color:rgba(255,255,255,.75);max-width:580px;line-height:1.65}
+.hero-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.hero-chip{
+  font-size:.72rem;font-weight:600;
+  background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);
+  color:var(--white);padding:4px 12px;border-radius:999px;
+  display:flex;align-items:center;gap:5px;
+}
+
+/* MAIN CONTENT */
+main{max-width:1160px;margin:0 auto;padding:32px 20px 60px;display:grid;grid-template-columns:1fr 280px;gap:24px;align-items:start}
+
+/* CONTENT AREA */
+.content-area{display:flex;flex-direction:column;gap:20px}
+
+/* SECTION CARD */
+.section-card{background:var(--white);border:1px solid var(--gray-200);border-radius:14px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.05);animation:fadeUp .4s ease both}
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.section-card:nth-child(2){animation-delay:.07s}
+.section-card:nth-child(3){animation-delay:.14s}
+.section-header{
+  padding:18px 24px;
+  border-bottom:1px solid var(--gray-200);
+  display:flex;align-items:center;gap:12px;
+  background:var(--gray-50);
+}
+.section-icon{
+  width:40px;height:40px;border-radius:9px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:18px;flex-shrink:0;
+}
+.section-header-text{display:flex;flex-direction:column;gap:2px}
+.section-num{font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gray-500)}
+.section-title{font-family:'Barlow',sans-serif;font-size:1.05rem;font-weight:800;color:var(--gray-900)}
+.section-body{padding:24px}
+
+/* Typography inside sections */
+.section-body p{font-size:.9rem;color:var(--text2);line-height:1.75;margin-bottom:12px}
+.section-body p:last-child{margin-bottom:0}
+.highlight-box{
+  background:rgba(0,184,212,.05);
+  border:1px solid rgba(0,184,212,.2);
+  border-left:4px solid var(--cyan);
+  border-radius:0 10px 10px 0;
+  padding:16px 18px;
+  margin:16px 0;
+}
+.highlight-box p{font-size:.88rem;color:var(--text);line-height:1.7;margin:0}
+.warning-box{
+  background:rgba(216,16,16,.04);
+  border:1px solid rgba(216,16,16,.15);
+  border-left:4px solid var(--red);
+  border-radius:0 10px 10px 0;
+  padding:16px 18px;
+  margin:16px 0;
+  display:flex;align-items:flex-start;gap:12px;
+}
+.warning-icon{font-size:1.1rem;flex-shrink:0;margin-top:1px}
+.warning-box p{font-size:.88rem;color:var(--text);line-height:1.7;margin:0}
+.bullet-list{display:flex;flex-direction:column;gap:8px;margin-top:4px}
+.bullet-item{display:flex;align-items:flex-start;gap:10px;font-size:.88rem;color:var(--text2);line-height:1.6}
+.bullet-dot{width:6px;height:6px;border-radius:50%;background:var(--cyan);flex-shrink:0;margin-top:7px}
+
+/* SIDEBAR */
+.sidebar{display:flex;flex-direction:column;gap:16px;position:sticky;top:88px}
+.sidebar-card{background:var(--white);border:1px solid var(--gray-200);border-radius:12px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.05)}
+.sidebar-header{padding:14px 18px;background:var(--gray-50);border-bottom:1px solid var(--gray-200);font-family:'Barlow',sans-serif;font-size:.82rem;font-weight:700;color:var(--gray-700);display:flex;align-items:center;gap:7px}
+.sidebar-body{padding:16px 18px}
+
+/* Metadata table */
+.meta-list{display:flex;flex-direction:column;gap:10px}
+.meta-item{display:flex;flex-direction:column;gap:2px}
+.meta-label{font-size:.62rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gray-500)}
+.meta-val{font-size:.82rem;color:var(--text);font-weight:500}
+
+/* Quick nav */
+.qnav-list{display:flex;flex-direction:column;gap:2px}
+.qnav-item{
+  display:flex;align-items:center;gap:8px;
+  font-size:.81rem;color:var(--gray-700);
+  padding:7px 10px;border-radius:7px;
+  text-decoration:none;transition:all .15s;
+  cursor:pointer;
+}
+.qnav-item:hover{background:rgba(0,184,212,.07);color:var(--cyan-dark)}
+.qnav-item.active-nav{background:rgba(216,16,16,.07);color:var(--red);font-weight:600}
+.qnav-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+
+/* Related links */
+.rel-list{display:flex;flex-direction:column;gap:6px}
+.rel-link{
+  display:flex;align-items:center;gap:8px;
+  font-size:.8rem;color:var(--gray-700);
+  padding:8px 10px;border-radius:7px;border:1px solid var(--gray-200);
+  text-decoration:none;background:var(--gray-50);
+  transition:all .15s;
+}
+.rel-link:hover{border-color:var(--cyan);color:var(--cyan-dark);background:rgba(0,184,212,.04)}
+.rel-link span{flex:1}
+.rel-arrow{color:var(--gray-400);font-size:.75rem}
+
+/* FOOTER */
+.footer{background:var(--red);padding:20px 24px;margin-top:20px}
+.footer-inner{max-width:1160px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.footer-text{font-size:.75rem;color:rgba(255,255,255,.8);font-family:'Barlow',sans-serif}
+.footer-text strong{color:var(--white)}
+.footer-badge{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);color:var(--white);font-size:.68rem;font-weight:600;padding:4px 12px;border-radius:6px;font-family:'Barlow',sans-serif;letter-spacing:.04em}
+
+@media(max-width:800px){
+  main{grid-template-columns:1fr}
+  .sidebar{position:static}
+  .hero-title{font-size:1.6rem}
+}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <span class="topbar-left">Heroico y Benemérito Cuerpo de Bomberos de Honduras · HBCBH</span>
+  <span class="topbar-right">Depto. Psicosocial · Tegucigalpa, M.D.C.</span>
+</div>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-inner">
+    <a class="logo" href="index.html">
+      <div class="logo-icon">🔥</div>
+      <div class="logo-texts">
+        <span class="logo-name">HBCBH</span>
+        <span class="logo-dept">Departamento de Psicosocial</span>
+      </div>
+    </a>
+    <div class="header-divider"></div>
+    <span class="header-title">Fichas Técnicas Psicométricas</span>
+    <nav class="nav-links">
+      <a class="nav-btn active" href="introduccion.html">📄 Introducción</a>
+      <a class="nav-btn" href="index.html">🧪 Tests</a>
+      <a class="nav-btn" href="glosario.html">📖 Glosario</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Documento oficial · Departamento de Psicosocial</div>
+    <h1 class="hero-title">Fichas Técnicas de Pruebas<br>Psicométricas</h1>
+    <p class="hero-sub">Instrumentos de evaluación para el proceso de selección de personal del Heroico y Benemérito Cuerpo de Bomberos de Honduras.</p>
+    <div class="hero-chips">
+      <span class="hero-chip">📅 Abril 2026</span>
+      <span class="hero-chip">📍 Tegucigalpa, M.D.C.</span>
+      <span class="hero-chip">🧪 8 pruebas psicométricas</span>
+      <span class="hero-chip">🎓 Lic. en Psicología</span>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN -->
+<main>
+  <div class="content-area">
+
+    <!-- INTRODUCCIÓN -->
+    <div class="section-card" id="introduccion">
+      <div class="section-header">
+        <div class="section-icon" style="background:#dbeafe">📄</div>
+        <div class="section-header-text">
+          <span class="section-num">Sección 01</span>
+          <span class="section-title">Introducción</span>
+        </div>
+      </div>
+      <div class="section-body">
+        <p>El presente documento reúne fichas técnicas de pruebas psicométricas utilizadas como apoyo en procesos de evaluación de personal. Su propósito es ofrecer una consulta organizada sobre instrumentos cognitivos, de personalidad y de aptitudes que pueden contribuir a la valoración integral de postulantes en contextos de selección, orientación y desarrollo.</p>
+        <div class="highlight-box">
+          <p>Cada ficha presenta información básica sobre <strong>nombre, autoría, objetivo, población, áreas evaluadas, aplicación, calificación, interpretación, validez, confiabilidad, utilidad y limitaciones</strong> del instrumento.</p>
+        </div>
+        <p>Este compendio fue elaborado con el propósito de sistematizar el conocimiento técnico disponible sobre cada prueba y facilitar su consulta por parte del personal del Departamento de Psicosocial del Cuerpo de Bomberos. Las pruebas incluidas han sido seleccionadas con base en su relevancia para el contexto de selección de personal en organizaciones de seguridad y emergencias.</p>
+        <div class="bullet-list">
+          <div class="bullet-item"><span class="bullet-dot"></span><span>Instrumentos cognitivos para evaluar capacidad de razonamiento y aprendizaje</span></div>
+          <div class="bullet-item"><span class="bullet-dot"></span><span>Pruebas de personalidad para identificar rasgos relevantes al rol de bombero</span></div>
+          <div class="bullet-item"><span class="bullet-dot"></span><span>Tests conductuales para explorar estilos de interacción y trabajo en equipo</span></div>
+          <div class="bullet-item"><span class="bullet-dot"></span><span>Instrumentos de tamizaje clínico para detección preliminar de indicadores relevantes</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- OBJETIVO -->
+    <div class="section-card" id="objetivo">
+      <div class="section-header">
+        <div class="section-icon" style="background:#d1fae5">🎯</div>
+        <div class="section-header-text">
+          <span class="section-num">Sección 02</span>
+          <span class="section-title">Objetivo</span>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="highlight-box">
+          <p><strong>Sistematizar información técnica</strong> de distintas pruebas psicométricas con el fin de facilitar su consulta y apoyar procesos de evaluación integral en contextos de selección de personal del Cuerpo de Bomberos.</p>
+        </div>
+        <p>Este objetivo responde a la necesidad de contar con un recurso accesible, organizado y técnicamente fundamentado que permita al equipo de psicología del HBCBH:</p>
+        <div class="bullet-list" style="margin-top:12px">
+          <div class="bullet-item"><span class="bullet-dot" style="background:var(--red)"></span><span>Seleccionar los instrumentos más adecuados según el perfil requerido para cada proceso de selección.</span></div>
+          <div class="bullet-item"><span class="bullet-dot" style="background:var(--red)"></span><span>Consultar rápidamente las características técnicas, aplicación, calificación e interpretación de cada prueba.</span></div>
+          <div class="bullet-item"><span class="bullet-dot" style="background:var(--red)"></span><span>Garantizar el uso técnico y ético de los instrumentos en el contexto institucional.</span></div>
+          <div class="bullet-item"><span class="bullet-dot" style="background:var(--red)"></span><span>Estandarizar los criterios de evaluación psicológica utilizados en los procesos de selección de aspirantes al HBCBH.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NOTA ÉTICA -->
+    <div class="section-card" id="etica">
+      <div class="section-header">
+        <div class="section-icon" style="background:#fce7f3">⚖️</div>
+        <div class="section-header-text">
+          <span class="section-num">Sección 03</span>
+          <span class="section-title">Nota Ética de Uso</span>
+        </div>
+      </div>
+      <div class="section-body">
+        <p>Las pruebas psicométricas incluidas en este documento deben utilizarse como <strong>herramientas complementarias</strong> dentro de un proceso de evaluación más amplio.</p>
+        <div class="warning-box">
+          <span class="warning-icon">⚠️</span>
+          <p>Sus resultados <strong>no deben interpretarse de manera aislada</strong> ni utilizarse como <strong>único criterio de decisión</strong>. El uso inadecuado de estos instrumentos puede comprometer la validez del proceso evaluativo y afectar negativamente a los postulantes.</p>
+        </div>
+        <p>Se recomienda complementar la información obtenida con los siguientes procedimientos:</p>
+        <div class="bullet-list" style="margin:14px 0">
+          <div class="bullet-item"><span class="bullet-dot" style="background:#f59e0b"></span><span><strong>Entrevista clínica o psicológica</strong> estructurada o semiestructurada.</span></div>
+          <div class="bullet-item"><span class="bullet-dot" style="background:#f59e0b"></span><span><strong>Observación</strong> del comportamiento del postulante durante el proceso.</span></div>
+          <div class="bullet-item"><span class="bullet-dot" style="background:#f59e0b"></span><span><strong>Revisión de antecedentes</strong> y referencias personales y laborales.</span></div>
+          <div class="bullet-item"><span class="bullet-dot" style="background:#f59e0b"></span><span><strong>Demás procedimientos pertinentes</strong> según el protocolo institucional vigente.</span></div>
+        </div>
+        <div class="highlight-box">
+          <p>Todo lo anterior debe realizarse siempre bajo <strong>criterios técnicos y éticos de evaluación psicológica</strong>, en concordancia con los principios deontológicos de la profesión y las normativas institucionales del HBCBH.</p>
+        </div>
+        <p style="margin-top:12px">El equipo profesional responsable de la aplicación e interpretación de estas pruebas debe contar con formación en psicometría y evaluación psicológica, y actuar con responsabilidad, confidencialidad y respeto por la dignidad de cada postulante.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <!-- Datos del documento -->
+    <div class="sidebar-card">
+      <div class="sidebar-header">📋 Datos del documento</div>
+      <div class="sidebar-body">
+        <div class="meta-list">
+          <div class="meta-item">
+            <span class="meta-label">Elaborado por</span>
+            <span class="meta-val">Reyna Alicia Cruz Hernández</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Carrera</span>
+            <span class="meta-val">Licenciatura en Psicología</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Institución</span>
+            <span class="meta-val">HBCBH · Depto. Psicosocial</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Lugar</span>
+            <span class="meta-val">Tegucigalpa, M.D.C.</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Fecha de elaboración</span>
+            <span class="meta-val">Abril de 2026</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Instrumentos incluidos</span>
+            <span class="meta-val">8 fichas técnicas</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Nav rápido -->
+    <div class="sidebar-card">
+      <div class="sidebar-header">🔗 En esta página</div>
+      <div class="sidebar-body">
+        <div class="qnav-list">
+          <a class="qnav-item active-nav" href="#introduccion">
+            <span class="qnav-dot" style="background:#3b82f6"></span>Introducción
+          </a>
+          <a class="qnav-item" href="#objetivo">
+            <span class="qnav-dot" style="background:#10b981"></span>Objetivo
+          </a>
+          <a class="qnav-item" href="#etica">
+            <span class="qnav-dot" style="background:#ec4899"></span>Nota ética de uso
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Links relacionados -->
+    <div class="sidebar-card">
+      <div class="sidebar-header">🗂 Otros recursos</div>
+      <div class="sidebar-body">
+        <div class="rel-list">
+          <a class="rel-link" href="index.html">
+            <span>🧪 Ver los 8 tests</span>
+            <span class="rel-arrow">→</span>
+          </a>
+          <a class="rel-link" href="glosario.html">
+            <span>📖 Glosario de términos</span>
+            <span class="rel-arrow">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Categorías de tests -->
+    <div class="sidebar-card">
+      <div class="sidebar-header">🧪 Tests incluidos</div>
+      <div class="sidebar-body">
+        <div class="rel-list">
+          <div class="rel-link" style="cursor:default">
+            <span style="width:8px;height:8px;border-radius:50%;background:#3b82f6;flex-shrink:0"></span>
+            <span>3 Pruebas cognitivas</span>
+          </div>
+          <div class="rel-link" style="cursor:default">
+            <span style="width:8px;height:8px;border-radius:50%;background:#8b5cf6;flex-shrink:0"></span>
+            <span>3 Pruebas de personalidad</span>
+          </div>
+          <div class="rel-link" style="cursor:default">
+            <span style="width:8px;height:8px;border-radius:50%;background:#d81010;flex-shrink:0"></span>
+            <span>1 Prueba conductual</span>
+          </div>
+          <div class="rel-link" style="cursor:default">
+            <span style="width:8px;height:8px;border-radius:50%;background:#ec4899;flex-shrink:0"></span>
+            <span>1 Prueba clínica</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </aside>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-text">
+      <strong>Heroico y Benemérito Cuerpo de Bomberos de Honduras</strong><br>
+      Fichas técnicas de pruebas psicométricas para selección de bomberos · Elaborado por Reyna Alicia Cruz Hernández · Abril 2026
+    </div>
+    <span class="footer-badge">Licenciatura en Psicología</span>
+  </div>
+</footer>
+
+<script>
+// Highlight active nav item on scroll
+const sections = document.querySelectorAll('.section-card');
+const navItems = document.querySelectorAll('.qnav-item');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => { if(window.scrollY >= s.offsetTop - 120) current = s.id; });
+  navItems.forEach(n => {
+    n.classList.remove('active-nav');
+    if(n.getAttribute('href') === '#'+current) n.classList.add('active-nav');
+  });
+});
+</script>
+</body>
+</html>
